@@ -1,0 +1,380 @@
+<div class="row sam">
+  <div class="col-xl-12 col-xxl-12">
+    <div class="card-body">
+      <ng-wizard [config]="config" (stepChanged)="stepChanged($event)">
+
+        <ng-wizard-step [title]="'1'" [description]="'Profile Listing'" [canEnter]="isValidTypeBoolean"
+          [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+
+          <form [formGroup]="profileForm">
+            <div class="row">
+              <div class="col-xl-4">
+                <div class="card">
+                  <div class="card-body ">
+                    <div class="text-center">
+                      <div class="profile-photo">
+                        <img src="{{Cropimagedata}}" width="100" *ngIf="Cropimagedata" class="img-fluid rounded-circle"
+                          onError="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'"
+                          alt="">
+                        <img
+                          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                          *ngIf="!Cropimagedata" width="100" class="img-fluid rounded-circle"
+                          onError="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'"
+                          alt="">
+                      </div>
+                      <h3 class="mt-4 mb-1">{{counsellor_name}}</h3>
+                      <!-- <a _ngcontent-slg-c59="" href="javascript:void()" class="btn btn-primary">Upload profile</a> -->
+                      <a class="btn btn-primary custon_button_theme" (click)="SelectImage()"
+                        href="javascript:void()"><span><i class="fa fa-arrow-up" aria-hidden="true"></i>
+                        </span> Upload profile</a>
+                      <input type="file" style="display: none" id="hdnfile" (change)="fileChangeEvent($event)"
+                        accept=".png,.jpg,.jpeg,.gif" />
+                      <input type="hidden" formControlName="profile_img"
+                        [ngClass]="{'is-invalid': submitted && f.profile_img.errors }" />
+
+                      <div *ngIf="submitted && f.profile_img.errors" class="invalid-feedback">
+                        <div *ngIf="f.profile_img.errors.required">
+                          Profile Image is required
+                        </div>
+                      </div>
+                    </div>
+                    <image-cropper *ngIf="CropimagedataDiv" [imageChangedEvent]="imageChangedEvent"
+                      [maintainAspectRatio]="true" [aspectRatio]="4 / 3" [resizeToWidth]="128" format="png"
+                      (imageCropped)="imageCropped($event)" (loadImageFailed)="loadImageFailed()"></image-cropper>
+                    <div class="crop_but">
+                      <button class="btn btn-primary  custon_button_theme1" (click)="setcropedImage()"
+                        *ngIf="CropimagedataDiv">Done</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Profile Summary</h4>
+                    <button class="btn btn-primary custon_button_theme">Sample Profile</button>
+                  </div>
+                  <div class="card-body">
+                    <div class="profile_summary">
+                      <div class="profile-photo">
+                        <textarea class="form-control" formControlName="profile_summry" rows="5"
+                          placeholder="Enter Your Summary"
+                          [ngClass]="{'is-invalid': submitted && f.profile_summry.errors }"></textarea>
+                        <div *ngIf="submitted && f.profile_summry.errors" class="invalid-feedback">
+                          <div *ngIf="f.profile_summry.errors.required">
+                            Profile Summary is required
+                          </div>
+                        </div>
+                      </div>
+                      <div class="profile_summar_bt  text-right">
+                        <!-- <a  class="btn btn-primary">Save</a>  -->
+                        <div class="toolbar toolbar-bottom" style="text-align: right;">
+                          <button class="btn btn-primary sw-btn-prev disabled" type="button">Previous</button>
+                          <button class="btn btn-primary sw-btn-next df_1" type="button" (click)="Saveprofile()"> Next
+                            <span class="nextarr"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </ng-wizard-step>
+
+        <ng-wizard-step [title]="'2'" [description]="'Services'">
+
+          <form [formGroup]="expertiseForm">
+            <div class="row" *ngFor="let expert of expertiseControls ; let i=index" formArrayName="Expertise" >
+            <ng-container [formGroupName]="i" >
+                <div class="col-lg-3 mb-2">
+                    <div class="form-group">
+                        <label class="text-label">{{expertiseArray[i]}}</label>
+                        <input type="hidden"  class="form-control" placeholder="Enter Price"  [(ngModel)]="expertiseArray[i]" formControlName="expertiseName" />
+                    </div>
+                </div>
+
+                <div class="col-lg-9 mb-2 " >
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter Price" formControlName="expertisePrice"  [ngClass]="{'is-invalid':submitted3 && f3.Expertise.controls[i].controls.expertisePrice.errors}" />
+                                <div *ngIf="submitted3 && f3.Expertise.controls[i].controls.expertisePrice.errors" class="invalid-feedback">
+                                    <div *ngIf="f3.Expertise.controls[i].controls.expertisePrice.errors.required">
+                                        {{expertiseArray[i]}} Price is Required
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                    </ng-container>
+                </div>
+    </form>
+    <div class="profile_summar_bt  text-right">
+      <!-- <a  class="btn btn-primary">Save</a>  -->
+      <div class="toolbar toolbar-bottom" role="toolbar" style="text-align: right;">
+          <button class="btn btn-primary sw-btn-prev " type="button" (click)="previousPayments()">  <span><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+          </span> Previous</button>
+          <button class="btn btn-primary sw-btn-next" type="button" (click)="SaveServices()">Next <span class="nextarr"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+          </span></button></div>
+  </div>
+        </ng-wizard-step>
+
+        <ng-wizard-step [title]="'3'" [description]="'Documentation'"
+          [canEnter]="isValidFunctionReturnsObservable.bind(this)" [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+
+          <form [formGroup]="DocumentForm">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Uploads Document</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <!-- <ng-container *ngFor="let educ of educationControls ; let i=index" formArrayName="Education">
+                                    <ng-container [formGroupName]="i"> -->
+                                <div class="col-lg-6 mb-2" >
+                                    <div class="form-group">
+                                        <label class="text-label">Latest Degree*</label>
+                                        <select class="form-control" placeholder="Enter Degree Name"  formControlName="degree_name"
+                                        [ngClass]="{'is-invalid':submitted1 && f1.degree_name.errors}">
+                                            <!-- <option value="" selected>Select Degree</option> -->
+                                            <option value="{{educ.degree}}" *ngFor="let educ of educationLength" selected>{{educ.degree}}</option>
+
+                                        </select>
+                                        <!-- <input type="text"  class="form-control" placeholder="Enter Degree Name" [(ngModel)]="educationLength[i].degree" formControlName="degree_name" disabled
+                                         [ngClass]="{'is-invalid':submitted1 && f1.Education.controls[i].controls.degree_name.errors}" /> -->
+                                       <div *ngIf="submitted1 && f1.degree_name.errors" class="invalid-feedback">
+                                           <div *ngIf="f1.degree_name.errors.required">
+                                               Degree Name is Required
+                                           </div>
+                                       </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mb-2 d-flex align-items-center" >
+                                    <div class="form-group width_o mt-4">
+                                        <div class="input-group ">
+
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" (change)="uploadDegree($event)" accept=".png,.jpg,.jpeg,.pdf" [ngClass]="{'is-1invalid':submitted1 && f1.degree_img.errors}" />
+                                                 <input type="hidden"  formControlName="degree_img"
+                                                 [ngClass]="{'is-invalid':submitted1 && f1.degree_img.errors}" />
+                                                 <!-- <span id="{{'UploaddegreeName'+i}}" class="filename"> </span> -->
+                                                 <div *ngIf="submitted1 && f1.degree_img.errors" class="invalid-feedback">
+                                                    <div *ngIf="f1.degree_img.errors.required">
+                                                        Degree Image is Required
+                                                    </div>
+                                                </div>
+
+                                                <label class="custom-file-label selected" *ngIf="!UploaddegreeName">Choose file  </label>
+                                                <label class="custom-file-label selected" *ngIf="UploaddegreeName">{{UploaddegreeName}}</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!-- </ng-container>
+                                </ng-container> -->
+                            <div class="col-lg-6 mb-2">
+                                <div class="form-group">
+                                    <label class="text-label">PAN Card*</label>
+                                    <input type="text"  class="form-control" placeholder="Enter PAN Number" formControlName="pan_num" [ngClass]="{'is-invalid': submitted1 && f1.pan_num.errors }" />
+                                    <div *ngIf="submitted1 && f1.pan_num.errors" class="invalid-feedback">
+                                      <div *ngIf="f1.pan_num.errors.required">
+                                          PAN Card is required
+                                      </div>
+                                      <div *ngIf="f1.pan_num.errors.minlength">PAN Card should be minimum 10 Characters </div>
+                                      <div *ngIf="f1.pan_num.errors.maxlength">PAN Card should be maximum 10 Characters </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-2 d-flex align-items-center">
+                                <div class="form-group mt-4 width_o">
+
+                                    <div class="input-group uploa">
+
+
+                                        <div class="custom-file">
+
+                                            <input type="file" class="custom-file-input" (change)="uploadPan($event)" accept=".png,.jpg,.jpeg,.pdf"  [ngClass]="{'is-invalid': submitted1 && f1.pan_img.errors }" />
+                                            <input type="hidden"  formControlName="pan_img"
+                                            [ngClass]="{'is-invalid': submitted1 && f1.pan_img.errors }"/>
+                                            <label class="custom-file-label selected" *ngIf="!panImageName">Choose file</label>
+                                            <label class="custom-file-label selected" *ngIf="panImageName">{{panImageName}}</label>
+                                            <!-- <span id="panCardName" class="filename"> </span> -->
+                                            <div *ngIf="submitted1 && f1.pan_img.errors" class="invalid-feedback">
+                                                <div *ngIf="f1.pan_img.errors.required">
+                                                    PAN Image is required
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-2">
+                                <div class="form-group">
+                                    <label class="text-label">Aadhaar Number*</label>
+                                    <input type="text"  class="form-control" placeholder="Enter Aadhaar  Number" (keypress)="numberOnly($event)" formControlName="adhar_num" [ngClass]="{'is-invalid': submitted1 && f1.adhar_num.errors }" />
+                                    <div *ngIf="submitted1 && f1.adhar_num.errors" class="invalid-feedback">
+                                      <div *ngIf="f1.adhar_num.errors.required">
+                                          Aadhar Number is required
+                                      </div>
+                                      <div *ngIf="f1.adhar_num.errors.minlength">Aadhar Card should be minimum 12 digit </div>
+                                      <div *ngIf="f1.adhar_num.errors.maxlength">Aadhar Card should be maximum 12 digit </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-2 d-flex align-items-center">
+                                <div class="form-group mt-4 width_o">
+                                    <div class="input-group ">
+
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" (change)="uploadAadhar($event)" accept=".png,.jpg,.jpeg,.pdf" [ngClass]="{'is-invalid': submitted1 && f1.adhar_front_img.errors }" />
+                                            <input type="hidden"  formControlName="adhar_front_img"
+                                            [ngClass]="{'is-invalid': submitted1 && f1.adhar_front_img.errors }"/>
+                                            <!-- <span id="AadharCardName" class="filename"> </span> -->
+                                            <div *ngIf="submitted1 && f1.adhar_front_img.errors" class="invalid-feedback">
+                                              <div *ngIf="f1.adhar_front_img.errors.required">
+                                                  Aadhar Front Image is required
+                                              </div>
+                                            </div>
+                                            <label class="custom-file-label selected" *ngIf="!AadharImageName">Aaadhar Front Image*</label>
+                                            <label class="custom-file-label selected" *ngIf="AadharImageName">{{AadharImageName}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 mb-2 d-flex align-items-center">
+
+                            </div>
+                            <div class="col-lg-6 mb-2 d-flex align-items-center">
+                                <div class="form-group mt-4 width_o">
+
+                                    <div class="input-group ">
+
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" (change)="uploadBackAadhar($event)" accept=".png,.jpg,.jpeg,.pdf" [ngClass]="{'is-invalid': submitted1 && f1.adhar_back_img.errors }" />
+                                            <input type="hidden"  formControlName="adhar_back_img"
+                                            [ngClass]="{'is-invalid': submitted1 && f1.adhar_back_img.errors }"/>
+                                            <!-- <span id="AadharCardName" class="filename"> </span> -->
+                                            <div *ngIf="submitted1 && f1.adhar_back_img.errors" class="invalid-feedback">
+                                              <div *ngIf="f1.adhar_back_img.errors.required">
+                                                  Aadhar Back Image is required
+                                              </div>
+                                            </div>
+                                            <label class="custom-file-label selected" *ngIf="!AadharBackImageName">Aadhaar Back Image*</label>
+                                            <label class="custom-file-label selected" *ngIf="AadharBackImageName">{{AadharBackImageName}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="profile_summar_bt  text-right">
+                            <!-- <a  class="btn btn-primary">Save</a>  -->
+                            <div class="toolbar toolbar-bottom" role="toolbar" style="text-align: right;">
+                                <button class="btn btn-primary sw-btn-prev " type="button" (click)="previousDocumen()"> <span><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                                </span>Previous</button>
+                                <button class="btn btn-primary sw-btn-next" type="button" (click)="SaveDocuments()">Next  <span class="nextarr"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                </span></button></div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+        </ng-wizard-step>
+
+        <ng-wizard-step [title]="'4'" [description]="'Payment Datails'">
+
+
+          <form [formGroup]="BankForm">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Bank Account Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Bank Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" placeholder="Enter Bank Name" formControlName="bank_name" [ngClass]="{'is-invalid': submitted2 && f2.bank_name.errors}" />
+                                        <div *ngIf="submitted2 && f2.bank_name.errors" class="invalid-feedback">
+                                          <div *ngIf="f2.bank_name.errors.required">
+                                              Bank Name is required
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Account Holder Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" placeholder="Enter Holder Name" formControlName="acc_holder_name" [ngClass]="{'is-invalid': submitted2 && f2.acc_holder_name.errors }" />
+                                        <div *ngIf="submitted2 &&  f2.acc_holder_name.errors" class="invalid-feedback">
+                                          <div *ngIf="f2.acc_holder_name.errors.required">
+                                            Account Holder Name is required
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Account Number</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" class="form-control" (keypress)="numberOnly($event)" placeholder="Enter Account Number" formControlName="acc_number" [ngClass]="{'is-invalid': submitted2 && f2.acc_number.errors }" />
+                                        <div *ngIf="submitted2 &&  f2.acc_number.errors" class="invalid-feedback">
+                                          <div *ngIf="f2.acc_number.errors.required">
+                                              Account Number is required
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Re-Enter Account Number</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" (keypress)="numberOnly($event)" placeholder="Re-Enter Account Number" formControlName="reEnter_Acc_num" [ngClass]="{'is-invalid': submitted2 && f2.reEnter_Acc_num.errors }" />
+                                        <div *ngIf="submitted2 &&  f2.reEnter_Acc_num.errors" class="invalid-feedback">
+                                          <div *ngIf="f2.reEnter_Acc_num.errors.required">
+                                              Re-Enter Account Number is required
+                                          </div>
+                                          <div *ngIf="f2.reEnter_Acc_num.errors.mustMatch">
+                                            Account Number Must Match
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">IFSC Code</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" placeholder="Enter Code" formControlName="ifsc_code" [ngClass]="{'is-invalid': submitted2 && f2.ifsc_code.errors }" />
+                                        <div *ngIf="submitted2 &&  f2.ifsc_code.errors" class="invalid-feedback">
+                                          <div *ngIf="f2.ifsc_code.errors.required">
+                                              IFSC is required
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile_summar_bt  text-right">
+                                    <!-- <a  class="btn btn-primary">Save</a>  -->
+                                    <div class="toolbar toolbar-bottom" role="toolbar" style="text-align: right;">
+                                        <button class="btn btn-primary sw-btn-prev " type="button" (click)="SkipProfile()">Skip</button>
+                                        <button class="btn btn-primary sw-btn-prev " type="button" (click)="previousBank()">Previous</button>
+                                        <button class="btn btn-primary sw-btn-next" type="button" (click)="SubmitAllDetails()">Submit</button>
+
+                                      </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+
+        </ng-wizard-step>
+
+      </ng-wizard>
+
+    </div>
+  </div>
+</div>

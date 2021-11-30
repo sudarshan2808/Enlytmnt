@@ -1,0 +1,116 @@
+span.info i {
+	margin-left: 20px;
+	color: #07195c;
+	font-size: 22px;
+}
+
+.reffpage {
+	border-right: 1px solid #00000040;
+	height: 100px;
+}
+
+p.reff-para {
+	font-weight: 600;
+	color: black;
+}
+
+p.reff-para1 {
+	color: #07195c;
+}
+
+span.ref-span i {
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+i.fa.fa-facebook-square {
+	color: #3b5998;
+	font-size: 21px;
+}
+
+i.fa.fa-twitter {
+	color: #1da1f2;
+	font-size: 20px;
+}
+
+i.fa.fa-linkedin {
+	color: #0077b5;
+	font-size: 20px;
+}
+
+form.example input[type=text] {
+	padding: 10px;
+	font-size: 12px;
+	border: 1px solid grey;
+	float: left;
+	width: 80%;
+	background: #ffff;
+}
+
+form.example button {
+	float: left;
+    width: 30%;
+    padding: 10px;
+    background: #07195c;
+    color: white;
+    font-size: 12px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    position: absolute;
+}
+
+form.example button:hover {
+	background: #07195c;
+}
+
+form.example::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+button.btn.btn-primary.submit-btns {
+	padding: 10px 60px;
+	background: #07195c;
+	border: #07195c;
+}
+
+button.btn-phn {
+	position: absolute;
+	top: 1px;
+	left: 5px;
+	background: #07195c;
+	border: #07195c;
+	width: 47px;
+	height: 39px;
+	border-radius: 100%;
+	color: white;
+	font-size: 13px;
+}
+
+input.form-control.mobiling {
+	padding-left: 50px;
+}
+
+img.medalimgs {
+	width: 2%;
+    margin-right: 20px;
+}
+
+span.excl-icons i {
+    padding-right: 10px;
+    color: red;
+}
+
+strong.mr-auto.refff {
+    font-size: 13px;
+}
+
+.toast-header.headersw {
+    border-left: 10px solid red;
+}
+
+a.nav-link.active {
+    background: #07195c !important;
+}

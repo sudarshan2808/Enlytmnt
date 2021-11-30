@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EnlytmntCounselorPanel</title>
+  <base href="./">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/css-bundle.css">
+  <link rel="stylesheet" href="assets/work/vendor/chartist/css/chartist.min.css">
+  <link href="assets/work/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/work/vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="assets/work/vendor/jquery-smartwizard/dist/css/smart_wizard.min.css">
+  <link href="assets/work/vendor/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+
+<link href="assets/css/bs-datepicker.css" rel="stylesheet">
+  
+
+
+
+
+
+
+
+
+  
+  
+</head>
+
+
+
+<body>
+  <app-root></app-root>
+
+<!-- allscriptsadd -->
+<script src="assets/work/vendor/global/global.min.js"></script>
+<script src="assets/work/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="assets/js/custom.min.js"></script>
+<script src="assets/js/deznav-init.js"></script>
+<script src="assets/work/vendor/chart.js/Chart.bundle.min.js"></script>
+<script src="assets/work/vendor/bootstrap-datetimepicker/js/moment.js"></script>
+<script src="assets/work/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="assets/work/vendor/jquery-steps/build/jquery.steps.min.js"></script>
+<script src="assets/work/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js"></script>
+<script src="assets/work/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+</body>
+<!-- <script>
+  $(function () {
+      $('#datepicker').datepicker({
+          format: "dd/mm/yyyy",
+          autoclose: true,
+          todayHighlight: true,
+          showOtherMonths: true,
+          selectOtherMonths: true,
+          autoclose: true,
+          changeMonth: true,
+          changeYear: true,
+          orientation: "button"
+      });
+  });
+</script> -->
+<script>
+  $(document).ready(function(){
+    // SmartWizard initialize
+    $('#smartwizard').smartWizard(); 
+  });
+
+  $(document).ready(function() {
+    $('#select').css('color','gray');
+    $('#select').change(function() {
+       var current = $('#select').val();
+       if (current != 'null') {
+           $('#select').css('color','black');
+       } else {
+           $('#select').css('color','gray');
+       }
+    }); 
+});
+</script>
+
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  </script>
+  <script>
+    $(document).ready(function(){
+      $('.toast').toast('show');
+    });
+    </script>
+    <!-- <script>
+      $(function() {
+   $( ".date" ).datepicker({
+   dateFormat : 'dd/mm/yy',
+   showOn: "both",
+   buttonImage: "b_calendar.png",
+   buttonImageOnly: true,
+   buttonText: "Select date",
+   changeMonth: true,
+   changeYear: true,
+   yearRange: "-100:+0"
+   }); 
+  }); 
+    </script> -->
+  
+
+</html>

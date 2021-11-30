@@ -1,0 +1,69 @@
+img.photo1 {
+    width: 39px;
+    height: 39px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+b.trans {
+    font-weight: 900;
+    color: black;
+}
+span.cales i {
+    margin-right: 11px;
+}
+strong.tds {
+    color: #a7dffb;
+}
+button.btn-three {
+    background: #081d67 !important;
+}
+.card.cards1 {
+    box-shadow: 0px 12px 23px 0px rgb(160 44 250 / 12%);
+}
+
+.trasn-date {
+    width: 100%;
+    padding: 10px 0px;
+    margin-top: -8px;
+    text-align: right;
+    margin-left: -79px;
+}
+button.btn.btn-primary {
+    padding: 10px 48px;
+    margin: 10px 0px;
+    background: #081d67;
+    border: #081d67;
+}
+.sedrs span {
+    position: relative;
+    left: 600px;
+}
+
+
+select.selecting{
+    background: #7c95fb;
+    border:  #7c95fb;
+    ;
+    color: white;
+    padding: 7px 16px;
+    border-radius: 21px;
+}
+input#inputEmail4 {
+    border-radius: 8px;
+    border-color: #b7b7b729;
+    height: 37px;
+    box-shadow: none;
+    padding: 10px;
+    margin-right: 8px;    
+
+}
+
+.sample {
+    width: 100% !important;
+}
+
+.button-shape{
+    background: #597aff !important;
+    border-radius: 8px !important;
+}

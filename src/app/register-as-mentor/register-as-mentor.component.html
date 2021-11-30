@@ -1,0 +1,159 @@
+<div class="loader_div" *ngIf="isInserting">
+	<span><img src="./assets/images/loading.gif"></span>
+ </div>
+<section class="fxt-template-animation fxt-template-layout19 loaded" >
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-7 col-12 hideform  fxt-bg-img">
+            <div class="bg"></div>
+            <div class="self3 pointer">
+           <img src="./assets/images/logo_brand.svg" alt="">
+           </div>
+            <div class="fxt-header">
+               <h4>WELCOME TO </h4>
+               <span><h1>ENLYTMNT</h1></span>
+               <p>EXPAND YOUR <span class="jue">REACH</span></p>
+               <p>TO EVERY CHILD IN NEED!</p>
+              <img src="" alt="">
+            </div>
+         </div>
+         <div class="col-md-5 col-12 fxt-bg-color">
+            <div class="card-body">
+               <div class="logo_header">
+                  <img src="./assets/images/logo.svg" alt="">
+               </div>
+               <ul class="nav nav-pills justify-content-center mb-4">
+                   <li class="nav-item">
+                       <a  class="nav-link self_cus " data-toggle="tab" aria-expanded="false" [routerLink]="['/login']">Login</a>
+                   </li>
+                   <li class="nav-item">
+                       <a href="#navpills2-2" class="nav-link self_cus active" data-toggle="tab" aria-expanded="false">Signup</a>
+                   </li>
+               </ul>
+               <div class="tab-content fxt-content">
+                   <div id="navpills2-2" class="tab-pane active">
+                     <div class="signup-form">
+                        <form [formGroup]="SignupForm">
+                           <div class="form-group">
+                              <input type="email" class="form-control input-lg"  placeholder="Email Address/Phone Number" formControlName="emailPhone" [ngClass]="{'is-invalid':submitted1 && f1.emailPhone.errors}">
+                              <svg _ngcontent-sif-c52="" id="icon-user1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path _ngcontent-sif-c52="" d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle _ngcontent-sif-c52="" cx="12" cy="7" r="4"></circle></svg>   
+                              <div *ngIf="submitted1 && f1.emailPhone.errors" class="invalid-feedback">
+                                 <div *ngIf="f1.emailPhone.errors.required">
+                                    Field is required
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <input [type]="password" class="form-control input-lg" name="password" placeholder="Password" formControlName="password" [ngClass]="{'is-invalid':submitted1 && f1.password.errors}">
+                              <div class="pass">
+                                 <i class="fa fa-unlock-alt"></i>
+                              </div>
+                              <span class="pswrd pointer" (click)="paswordClick()">  <i class="fa fa-eye" aria-hidden="true" *ngIf="show"></i>
+                                 <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="!show"></i></span>
+                                 <div class="non">
+                                 <password-strength-meter [password]="passwordValue.value" [enableFeedback]="false" ></password-strength-meter>
+                              </div>
+                                 <!-- <small id="passwordHelpBlock" class="form-text text-muted">
+                                   Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters,
+                                   or emoji.
+                                 </small> -->
+                              <div *ngIf="submitted1 && f1.password.errors" class="invalid-feedback">
+                                 <div *ngIf="f1.password.errors.required">
+                                    password is required
+                                 </div>
+                                 <!-- <div *ngIf="f.password.errors.minlength">
+                                    Minimum 6 Digit is required
+                                    </div> -->
+                              </div>
+                           </div>
+                           <div class="custom-control custom-checkbox mb-3 checkbox-info">
+                              <input type="checkbox" formControlName="chkbox"  class="custom-control-input" id="customCheckBox1" required=""  [ngClass]="{'is-invalid':submitted1 && f1.chkbox.errors}">
+                              <label class="custom-control-label" for="customCheckBox1">By clicking sign up you are agreeing to the <a href="" class="pointer nam_1"><span >terms of use</span></a> and <a href=""><span class="pointer">our privacy policy</span></a></label>
+                              <div *ngIf="submitted1 && f1.chkbox.errors" class="invalid-feedback"> Checkbox is required </div>
+                           </div>
+                        </form>
+                        
+                       
+                        <div class="custom text-center">
+                           <button type="submit" class="btn btn-success btn-lg btn-block signup-btn" (click)="SendOtp()">Sign Up</button>
+                        </div>
+                        <div class="text-center">
+                           <p class="clickeds pointer hur " [routerLink]="['/login']">Already have an account? Login</p>
+                        </div>
+
+                        <div class="or-seperator"><b>or</b></div>
+                        <div class="text-center">
+                           <p class="clickeds ">With your Social Network</p>
+                        </div>
+                        <ul class="fxt-socials">
+                           <li class="fxt-facebook fxt-transformY-50 fxt-transition-delay-5"><a  (click)="signInWithGoogle()" title="Facebook" class="pointer"><i class=""> <img src="./assets/images/google.svg" alt=""></i></a></li>
+                           <li class="fxt-twitter fxt-transformY-50 fxt-transition-delay-6 "><a (click)="signInWithFB()" title="twitter"  class="pointer"><i class=""><img src="./assets/images/facebook.svg" alt=""></i> </a></li>
+                           <li class="fxt-google fxt-transformY-50 fxt-transition-delay-7 "><a (click)="signInWithApple()"title="google"  class="pointer"><i class=""><img src="./assets/images/apple.svg" alt=""></i></a></li>
+                        </ul>
+                       
+                       
+                     </div>
+                   </div>
+                
+               </div>
+           </div>
+         </div>
+        
+      </div>
+     
+   </div>
+ <!-- registerdesignform one half -->
+</section>
+<!-- model for otp  -->
+<div id="OtpModal" class="modal fade in" role="dialog" aria-hidden="false" style="display: none;">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <div>
+               <h5 class="mb-20">Verify OTP</h5>
+               <span>Timer {{timeLeft}} seconds</span>
+            </div>
+            <br>
+            <div class="numbers">
+               <p>We Have Sent you an OTP on</p>
+               <div class="mobile" *ngIf="showNo">
+                  <span>{{emailNo}}<i class="fa fa-pencil pointer" (click)="showEditInput()"></i></span>
+               </div>
+               <div class="mobile" *ngIf="showBox">
+                  <div>
+                 <input type="text" class="form-control with_pad" placeholder="Enter Email or Phone Number" [(ngModel)]="edit_emailPhone"> 
+                 <div class="sent_otp text-right">
+                 <button class="btn btn-primary pop_1 nh_1" (click)="SendOtp()">Send</button>
+               </div>
+               </div>
+               </div>
+            </div>
+            <div>
+               <div class="otp_section">
+                  <p>OTP</p>
+               </div>
+               <div class="copy-coupon-wrap">
+                  <input type="text" placeholder="Please enter the 6 digit OTP here to Verify" id="otp_code" class="form-control with_pad"> 
+                 <span class="text-danger" id="otp_error"></span>
+               </div>
+               <div class="d-flex bd-highlight pt-3 pb-3">
+                  <div class=" flex-grow-1 bd-highlight cd">Still not received OTP?</div>
+                  <!-- <div class=" bd-highlight dd pointer" (click)="resendOtp()"><b>Resend OTP</b> ({{timeLeftOTp}})</div> -->
+               <button class="btn btn-primary pop_1  nh_1" (click)="resendOtp()" [disabled]="disable">Resend OTP ({{timeLeftOTp}})</button>
+                </div>
+               <div class="col-12 col-sm-12 dos">
+                  <div class="custom-control custom-checkbox mb-3 checkbox-info">
+                     <input type="checkbox"   class="custom-control-input" id="customCheckBox2" name="popupChk" [(ngModel)]="popupChk">
+                     <label class="custom-control-label" for="customCheckBox2">Receive relevant offers and promotional communication form Enlytmnt</label>
+                     <span class="text-danger" id="chk_error"></span>
+                  </div>
+              </div>
+              <div class="custom_working">
+               <span id="errorCode" class="text-danger"></span><br><button class="btn btn-success btn-lg btn-block signup-btn" (click)="verifyOtp()">Verify</button>
+            </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

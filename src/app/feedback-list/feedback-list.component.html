@@ -1,0 +1,145 @@
+<div class="loader_div" *ngIf="isInserting">
+    <span><img src="./assets/images/loading.gif"></span>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="review-box">
+                <h2>Reviews</h2>
+                <div class="review-1">
+                    <span>Rating:
+                        <select [(ngModel)]="rating" name="rating" (change)="feedbackList()" class="search">
+                            <option value="">Select</option>
+                            <option value="1">All</option>
+                            <option value="2">Not Happy</option>
+                            <option value="3">Could be better</option>
+                            <option value="4">Good</option>
+                            <option value="5">Happy</option>
+                            <option value="6">Super Happy </option>
+                        </select>
+
+                    </span>
+                    <span class="sort">Sort by:
+                        <select [(ngModel)]="sortBy" name="sortBy" (change)="feedbackList()" class="search">
+                            <option value="">Select</option>
+                            <option value="new">Newest First</option>
+                            <option value="old">Oldest First</option>
+
+                        </select>
+                    </span>
+
+                    <span class="sort">Time Range
+                        <select [(ngModel)]="searchDDFilter" name="searchDDFilter" (change)="filterSearch($event)"
+                            class="search_1">
+                            <option value="">Select</option>
+                            <option value="this week" selected> This week</option>
+                            <option value="this month"> This month</option>
+                            <option value="Custom range"> Custom range</option>
+                        </select>
+                        <span class="export-btn">
+                            <!--<button type="button" class="btn btn-square btn-outline-info">Export to csv...</button>-->
+                            <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1 "><i aria-hidden="true"
+                                    class="fa fa-download"></i></a>
+                        </span>
+                        <div *ngIf="customdate" class="desf">
+                            <label class="dating">From Date</label>
+                            <input type="text" autocomplete="off" [(ngModel)]="fromDate" name="fromDate"
+                                placeholder="DD/MM/YYYY" bsDatepicker class="dem" id="inputEmail4">
+                            <label class="dating">To Date</label>
+                            <input type="text" autocomplete="off" [(ngModel)]="toDate" name="toDate"
+                                placeholder="DD/MM/YYYY" bsDatepicker class="dem" id="inputEmail4">
+                            <button class="btn btn-primary button-shape" (click)="feedbackList()">Submit</button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="bootstrap-media">
+                        <ul class="list-unstyled">
+                            <li class="media medis-2" *ngFor="let feedback of feedbackData">
+                                <img class="mr-3 " width="60"
+                                    src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                    width="24" alt="" class="photo1">
+                                <div c lass="media-body">
+                                    <div class="smiley-icons">
+                                        <span class="float-right"><img src="./assets/images/happy.png"
+                                                class="lovesimg"></span>
+                                    </div>
+
+                                    <h5 class="mt-0">{{feedback.student_id}}</h5>
+                                    <div class="row">
+
+
+                                        <div _ngcontent-adc-c55="" class="seds">
+                                            <h6 _ngcontent-adc-c55="" class="happys">Positive:</h6>
+                                            <ul _ngcontent-adc-c55="" class="frndses">
+                                                <li _ngcontent-adc-c55="" class="frnds-1">Friendliness</li>
+                                                <li _ngcontent-adc-c55="" class="frnds-1">Explanation of the problem
+                                                    areas
+                                                </li>
+                                                <li _ngcontent-adc-c55="" class="frnds-1">Session satisfaction</li>
+                                            </ul>
+                                            <ul _ngcontent-adc-c55="" class="frndses">
+                                                <li _ngcontent-adc-c55="" class="frnds-1"> Value for money</li>
+                                                <li _ngcontent-adc-c55="" class="frnds-1"> Useful suggestions</li>
+                                            </ul>
+                                        </div>
+
+
+                                        <div class="col rb1">
+                                            <div _ngcontent-adc-c55="" class="seds">
+                                                <h6 _ngcontent-adc-c55="" class="happys">Service type:</h6>
+                                                <ul _ngcontent-adc-c55="" class="frndses">
+                                                    <li _ngcontent-adc-c55="" class="frnds-1">Anxiety (On-demand)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col ">
+                                            <div _ngcontent-adc-c55="" class="seds">
+                                                <h6 _ngcontent-adc-c55="" class="happys">Group:</h6>
+                                                <ul _ngcontent-adc-c55="" class="frndses">
+                                                    <li _ngcontent-adc-c55="" class="frnds-1">ABC school</li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <p class="mb-0 ipsum-paras">{{feedback.feedback}}
+                                    </p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <button type="button" class="btn btn-rounded btn-warning">
+                                                <span class="btn-icon-left text-warning"><i class="fa fa-star"
+                                                        aria-hidden="true"></i>
+                                                </span>Recommended</button>
+                                        </div>
+
+                                        <div class="col">
+                                            <span class="float-right days-times">{{feedback.days ? feedback.days : (feedback.createdDate | date:'fullDate')}}
+                                            </span>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

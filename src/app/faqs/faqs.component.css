@@ -1,0 +1,27 @@
+.cus{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+.activity-icon i{
+    font-size: 30px;
+    color: #a02cfa;
+}
+
+.card-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #000;
+    text-transform: capitalize;
+    margin-top: 50px;
+}
+.accordion__header--indicator {
+    font-family: 'themify';
+    position: absolute;
+    right: 1.5625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a02cfa;
+}

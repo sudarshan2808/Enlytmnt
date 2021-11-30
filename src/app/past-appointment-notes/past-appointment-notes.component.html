@@ -1,0 +1,345 @@
+<div class="container-fluid">
+   <div class="row">
+         <div class="card" >
+            <div class="card-body">
+               <ul class="nav nav-pills mb-4 light">
+                  <li class=" nav-item">
+                     <a [routerLink]="['/notes_details']" class="nav-link " data-toggle="tab" aria-expanded="false">Pending</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Completed</a>
+                  </li>
+               </ul>
+           
+               <div class="tab-content">
+                  <div id="navpills-1" class="tab-pane active">
+                     <div class="row">
+                        <div class="col-md-12 notescomp">
+                           <div id="DZ_W_TimeLine" class="widget-timeline dz-scroll height370 ps ps--active-y" *ngIf="pastList">
+                             <ul class="timeline">
+                                <li class="listing">
+                                   <div class="timeline-badge primary"></div>
+                                   <a  class="timeline-panel text-muted" >
+                                      <div class="row HG1" >
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann">01 Jun 20</h3>
+                                            <p class="jann1">09:00 AM</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Student</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Service</h3>
+                                            <p class="times-slct1">Dr.Arkody</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Group</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2 pointer" (click)="ShowNotes()">
+                                          <div class="notes">
+                                         <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                                         &nbsp;
+                                          <span class="jann3">Notes</span>
+                                    </div>
+                                    </div>
+                                      </div>
+                                   </a>
+                                </li>
+                                <li class="listing">
+                                   <div class="timeline-badge primary"></div>
+                                   <a class="timeline-panel text-muted" href="#">
+                                      <div class="row HG1">
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann">01 Jun 20</h3>
+                                            <p class="jann1">09:00 AM</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Type</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Doctor</h3>
+                                            <p class="times-slct1">Dr.Arkody</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Nurse</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2 pointer" (click)="ShowNotes()">
+                                          <div class="notes">
+                                         <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                                         &nbsp;
+                                          <span class="jann3">Notes</span>
+                                    </div>
+                                    </div>
+                                      </div>
+                                   </a>
+                                </li>
+                                <li class="listing">
+                                   <div class="timeline-badge primary"></div>
+                                   <a class="timeline-panel text-muted" href="#">
+                                      <div class="row HG1">
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann">01 Jun 20</h3>
+                                            <p class="jann1">09:00 AM</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Type</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Doctor</h3>
+                                            <p class="times-slct1">Dr.Arkody</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Nurse</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2 pointer" (click)="ShowNotes()">
+                                          <div class="notes">
+                                         <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                                         &nbsp;
+                                          <span class="jann3">Notes</span>
+                                    </div>
+                                    </div>
+                                      </div>
+                                   </a>
+                                </li>
+                                <li class="listing">
+                                   <div class="timeline-badge primary"></div>
+                                   <a class="timeline-panel text-muted" href="#">
+                                      <div class="row HG1">
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann">01 Jun 20</h3>
+                                            <p class="jann1">09:00 AM</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Type</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Doctor</h3>
+                                            <p class="times-slct1">Dr.Arkody</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Nurse</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2 pointer" (click)="ShowNotes()">
+                                          <div class="notes">
+                                         <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                                         &nbsp;
+                                          <span class="jann3">Notes</span>
+                                    </div>
+                                    </div>
+                                      </div>
+                                   </a>
+                                </li>
+                                <li class="listing">
+                                   <div class="timeline-badge primary"></div>
+                                   <a class="timeline-panel text-muted" href="#">
+                                      <div class="row HG1">
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann">01 Jun 20</h3>
+                                            <p class="jann1">09:00 AM</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Type</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Doctor</h3>
+                                            <p class="times-slct1">Dr.Arkody</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Nurse</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2 pointer" (click)="ShowNotes()">
+                                          <div class="notes">
+                                         <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                                         &nbsp;
+                                          <span class="jann3">Notes</span>
+                                    </div>
+                                    </div>
+                                      </div>
+                                   </a>
+                                </li>
+                                <li class="listing">
+                                   <div class="timeline-badge primary"></div>
+                                   <a class="timeline-panel text-muted" href="#">
+                                      <div class="row HG1">
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann">01 Jun 20</h3>
+                                            <p class="jann1">09:00 AM</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Type</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Doctor</h3>
+                                            <p class="times-slct1">Dr.Arkody</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Nurse</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2 pointer" (click)="ShowNotes()">
+                                          <div class="notes">
+                                         <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                                         &nbsp;
+                                          <span class="jann4">Notes</span>
+                                    </div>
+                                    </div>
+                                      </div>
+                                   </a>
+                                </li>
+                            
+                             </ul>
+
+                            
+                           </div>
+
+
+                           <!-- Show Notes -->
+                           <div id="DZ_W_TimeLine" class="widget-timeline dz-scroll height370 ps ps--active-y" *ngIf="pastNotes">
+                             <ul class="timeline">
+                                <li class="listing">
+                                   <div class="timeline-badge primary"></div>
+                                   <a class="timeline-panel text-muted" href="#">
+                                      <div class="row HG1">
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann">01 Jun 20</h3>
+                                            <p class="jann1">09:00 AM</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Student</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-3"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Service</h3>
+                                            <p class="times-slct1">Dr.Arkody</p>
+                                         </div>
+                                         <div class="col-md-2"  style="
+                                            border-right: 2px solid #00000040;
+                                            ">
+                                            <h3 class="jann1">Group</h3>
+                                            <p class="times-slct1">Consultation</p>
+                                         </div>
+                                         <div class="col-md-2 pointer" (click)="ShowNotes()">
+                                          <div class="notes">
+                                         <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                                         &nbsp;
+                                          <span class="jann3">Notes</span>
+                                    </div>
+                                    </div>
+                                      </div>
+                                   </a>
+                                </li>
+                            
+                             </ul>
+
+                              <!-- writeNote -->
+                              <div class="row">
+                              <div class="col-md-12">
+
+
+                                <h3 class="text-center"><b>Subject</b></h3>
+                             <div class="head-notes2">
+
+                   
+                              <small class="intern">Internal</small>
+                              
+                             </div>
+                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quos porro, velit cumque eligendi ratione ab doloremque accusantium amet perspiciatis exercitationem sint adipisci, vero architecto natus fugiat! Debitis, odit mollitia.
+                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque veritatis praesentium corporis vitae consequuntur. Nisi adipisci, magnam accusantium animi ad at praesentium tempore dolore eaque! Doloremque maiores tenetur tempora asperiores.
+                             </p>
+                              </div>
+                              <hr>
+                              <div class="col-md-12">
+                               <div class="head-notes2">
+                                <small class="intern">External</small>
+                                <!--<h3>Subject</h3>-->
+                               </div>
+                               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quos porro, velit cumque eligendi ratione ab doloremque accusantium amet perspiciatis exercitationem sint adipisci, vero architecto natus fugiat! Debitis, odit mollitia.
+                                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque veritatis praesentium corporis vitae consequuntur. Nisi adipisci, magnam accusantium animi ad at praesentium tempore dolore eaque! Doloremque maiores tenetur tempora asperiores.
+                               </p>
+                                </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card-footer" *ngIf="pastNotes">
+                         <div class="dark-btn">
+                           <button type="button" class="btn btn-dark">View Report</button>
+                         </div>
+                         <div class="dark-btn2">
+                           <button type="button" class="btn btn-primary sends pointer" (click)="backToList()">Back to list</button>
+                         </div>
+                       </div>
+                     </div>
+                  </div>
+
+               </div>
+            
+            </div>
+         </div>
+    
+   </div>
+   </div>

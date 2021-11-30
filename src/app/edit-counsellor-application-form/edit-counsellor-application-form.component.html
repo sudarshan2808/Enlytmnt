@@ -1,0 +1,606 @@
+<!-- <div class="header_demo">
+    <div class="logopart">
+       <img src="./assets/images/logo.svg" alt="">
+    </div>
+ </div> -->
+ <div class="loader_div" *ngIf="isInserting">
+    <span><img src="./assets/images/loading.gif"></span>
+ </div>
+ <div class="section " (click)="closeAll()">
+    <div class="container custom ">
+       <form [formGroup]="ApplicationForm">
+          <div class="row">
+             <div class="ds_4">
+                <div class="sample_12">
+                   <h1 style="color: #000;"><span class="logo_patter">A</span>pplication Form</h1>
+                   <abbr class="file-title">Personal Information</abbr>
+                   </div>
+                <div class="form-row">
+                   <div class="form-group col-md-6 mb-3">
+                      <label for="inputState" class="labels-1">Name Prefix</label>
+                      <select id="inputState" class="form-control dem" (change)="othersPrefix($event)"
+                         formControlName="name_prefix" [ngClass]="{'is-invalid':submitted && f.name_prefix.errors}">
+                         <option value="" class="df">Select</option>
+                         <option value="Mr">Mr</option>
+                         <option value="Mrs">Mrs</option>
+                         <option value="Ms">Ms</option>
+                         <option value="Dr">Dr</option>
+                         <option value="Prof">Prof</option>
+                         <option value="Lt">Lt</option>
+                         <option value="Capt">Capt</option>
+                         <option value="Maj">Maj</option>
+                         <option value="Lt Col">Lt Col</option>
+                         <option value="Col">Col</option>
+                         <option value="Others">Others</option>
+                      </select>
+                      <div *ngIf="submitted && f.name_prefix.errors" class="invalid-feedback">
+                         <div *ngIf="f.name_prefix.errors.required">
+                            Name Prefix is required
+                         </div>
+                      </div>
+                   </div>
+                   <div class="form-group col-md-6 mb-3" *ngIf="otherprefix">
+                      <label for="inputPassword4" class="labels-1">Others</label>
+                      <input type="text" class="form-control"  placeholder="Enter Other Prefix" (keyup)="otherPrefixSuggestion($event)" autocomplete="off"
+                         formControlName="others">
+                         <div *ngIf="otherPrefixSuggestionData" >
+                            <div class="de_3 ">
+                            <div *ngFor="let otherSugg of otherPrefixSuggestionData" class="suggestion">
+                               <span (click)="setSuggestionValue(otherSugg.other_prefix,'others','')" class="pointer">{{otherSugg.other_prefix}}</span>
+                            </div>
+                            </div>
+                         </div>
+                   </div>
+                   
+                </div>
+ 
+                <div class="form-row">
+                   <div class="form-group col-md-6 mb-3">
+                      <label for="inputPassword4" class="labels-1">First Name</label>
+                      <input type="text" class="form-control" id="" placeholder="Enter Your First Name"
+                         formControlName="fname" [ngClass]="{'is-invalid':submitted && f.fname.errors}">
+                      <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
+                         <div *ngIf="f.fname.errors.required">
+                            First Name is required
+                         </div>
+                      </div>
+                   </div>
+                   <div class="form-group col-md-6 mb-3">
+                      <label for="inputPassword4" class="labels-1">Last Name</label>
+                      <input type="text" class="form-control" id="" placeholder="Enter Your Last Name"
+                         formControlName="lname" [ngClass]="{'is-invalid':submitted && f.lname.errors}">
+                      <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
+                         <div *ngIf="f.lname.errors.required">
+                            Last Name is required
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="form-row">
+                   <div class="form-group col-md-6 mb-3">
+                      <label for="inputEmail4" class="labels-1">Email</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email "
+                         formControlName="email" [ngClass]="{'is-invalid':submitted && f.email.errors}">
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                         <div *ngIf="f.email.errors.required">
+                            Email is required
+                         </div>
+                         <div *ngIf="f.email.errors.email">
+                            Email must be a valid email address
+                         </div>
+                      </div>
+                   </div>
+                   <div class="form-group col-md-6 mb-3">
+                      <label for="inputEmail4" class="labels-1">Phone</label>
+                      <input type="text" class="form-control" id="inputEmail4" placeholder="Enter Phone Number"
+                         formControlName="phoneno" (keypress)="numberOnly($event)"
+                         [ngClass]="{'is-invalid':submitted && f.phoneno.errors}">
+                      <div *ngIf="submitted && f.phoneno.errors" class="invalid-feedback">
+                         <div *ngIf="f.phoneno.errors.required">
+                            Phone Number is required
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="form-row">
+                   <!-- <div class="row"> -->
+                  
+                     
+                      <div class="form-group vf col-md-6 mb-3">
+                         <label for="inputEmail4" class="labels-1">Gender</label><br/>
+                      <div class="form-check form-check-inline nd">
+                         <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male"
+                            formControlName="gender" [ngClass]="{'is-invalid':submitted && f.gender.errors}">
+                         <label class="form-check-label" for="inlineRadio1">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline nd">
+                         <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female"
+                            formControlName="gender" [ngClass]="{'is-invalid':submitted && f.gender.errors}">
+                         <label class="form-check-label" for="inlineRadio2">Female</label>
+                      </div>
+                      <div class="form-check form-check-inline nd">
+                         <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="Others"
+                            formControlName="gender" [ngClass]="{'is-invalid':submitted && f.gender.errors}">
+                         <label class="form-check-label" for="inlineRadio3">Others</label>
+                      </div>
+                      <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                         <div *ngIf="f.gender.errors.required">
+                            Gender is required
+                         </div>
+                      </div>
+                   </div>
+                   <!-- </div> -->
+                   <div class="form-group col-md-6 mb-3">
+                      <label for="inputEmail4" class="labels-1">DOB</label>
+                      <!-- <input type="date" class="form-control dem" id="inputEmail4" placeholder="" (change)="datechangeValidation($event,'dob','')" formControlName="dob"
+                         [ngClass]="{'is-invalid':submitted && f.dob.errors}"> -->
+
+                         <input type="text"
+                         placeholder="DD/MM/YYYY"
+                         bsDatepicker class="form-control dem" class="form-control dem" id="inputEmail4" (ngModelChange)="datechangeValidation($event,'dob','')" formControlName="dob"
+                         [ngClass]="{'is-invalid':submitted && f.dob.errors}">
+
+                      <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                         <div *ngIf="f.dob.errors.required">
+                            DOB is required
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="row">
+             <div class="ds3">
+                <div class="sample_12">
+                   <abbr class="file-title">Select Location</abbr>
+                   </div>
+                <div class="form-row">
+                  
+                   <div class="form-group col-md-4 mb-3">
+                      <label for="inputCity" class="labels-1">Country</label>
+                      <!-- <select class="form-control" formControlName="loc_country" (change)="getState($event)"
+                         [ngClass]="{'is-invalid':submitted && f.loc_country.errors}">
+                         <option value="">Select Country</option>
+                         <option *ngFor="let country of countryData" value="{{country.country_name}}">
+                            {{country.country_name}}</option>
+ 
+                      </select> -->
+                      <ngx-select-dropdown [config]="config" [options]="countryData" (change)="getState($event)"
+                         formControlName="loc_country" [multiple]="false"
+                         [ngClass]="{'is-invalid':submitted && f.loc_country.errors}"></ngx-select-dropdown>
+ 
+                      <div *ngIf="submitted && f.loc_country.errors" class="invalid-feedback">
+                         <div *ngIf="f.loc_country.errors.required">
+                            Country is required
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-4 mb-3">
+                      <label for="inputState" class="labels-1">State</label>
+                      <!-- <select id="inputState" class="form-control" (change)="getCity($event)" formControlName="loc_state"
+                         [ngClass]="{'is-invalid':submitted && f.loc_state.errors}">
+                         <option selected value="">Select State</option>
+                         <option *ngFor="let state of stateData" value="{{state.state_name}}">{{state.state_name}}
+                         </option>
+                      </select> -->
+                      <ngx-select-dropdown [config]="config_job_state" [options]="stateData" (change)="getCity($event)"
+                         formControlName="loc_state" [multiple]="false"
+                         [ngClass]="{'is-invalid':submitted && f.loc_state.errors}"></ngx-select-dropdown>
+                      <!-- <ng-multiselect-dropdown
+                     placeholder="Select State"
+                     [data]="stateData"
+                     [settings]="loc_StateSettings"
+                     formControlName="loc_state" (onSelect)="getCity($event)" [ngClass]="{'is-invalid':submitted && f.loc_state.errors}"
+                     >
+                     </ng-multiselect-dropdown> -->
+                      <div *ngIf="submitted && f.loc_state.errors" class="invalid-feedback">
+                         <div *ngIf="f.loc_state.errors.required">
+                            State is required
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-4 mb-3">
+                      <label for="inputZip" class="labels-1">City</label>
+                      <!-- <select class="form-control" formControlName="loc_city"
+                         [ngClass]="{'is-invalid':submitted && f.loc_city.errors}">
+                         <option selected value="">Select City</option>
+                         <option *ngFor="let city of CityData" value="{{city.city_name}}">{{city.city_name}}</option>
+                      </select> -->
+ 
+                      <ngx-select-dropdown [config]="config_city" [options]="CityData" formControlName="loc_city"
+                         [multiple]="false" [ngClass]="{'is-invalid':submitted && f.loc_city.errors}">
+                      </ngx-select-dropdown>
+ 
+                      <div *ngIf="submitted && f.loc_city.errors" class="invalid-feedback">
+                         <div *ngIf="f.loc_city.errors.required">
+                            City is required
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="row">
+             <div class="ds3">
+                <div class="form-group  mb-3">
+                   <div class="sample_12">
+                      <abbr class="file-title">Spoken Languages</abbr>
+                      </div>
+                   <ng-multiselect-dropdown placeholder='Spoken Languages' [settings]="LanguagesSettings"
+                      [data]="SpokenData" class="demo" [(ngModel)]="spokenLanguage" formControlName="spoken_Language"
+                      [ngClass]="{'is-invalid':submitted && f.spoken_Language.errors}">
+                   </ng-multiselect-dropdown>
+                   <div *ngIf="submitted && f.spoken_Language.errors" class="invalid-feedback">
+                      <div *ngIf="f.spoken_Language.errors.required">
+                         Spoken Language is required
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="row">
+             <div class="ds3" formArrayName="Education_more_array">
+                <div class="sample_12">
+                   <abbr class="file-title">Education</abbr>
+                   <p>Please mention the highest education degree that you have completed.</p>
+                   </div>
+                <div *ngFor="let educ of educationControls; let i=index">
+                   <div [formGroupName]="i">
+                   <div class="d-sm-flex flex-wrap align-items-center d-block mb-md-3 mb-0 " >
+                      <div class="mr-auto pr-3 ">
+                      <h4 class="file-title">Education {{i+1}}</h4>
+                   </div>
+                      <button class="btn btn-danger shadow btn-xs sharp pointer" (click)="removeAddMoreEducation(i)" *ngIf="educationControls.length > 1"
+                         ><i class="fa fa-trash"></i></button>
+                     
+                   </div>
+                   <div class="form-row">
+                      <div class="form-group col-md-6 mb-3">
+                         <label for="inputPassword4" class="labels-1">School of University</label>
+                         <input type="text" class="form-control" id="{{'university_name'+educ.id}}" (keyup)="UniversitySuggestion($event,i)" autocomplete="off"
+                            placeholder="Enter name of school/university" formControlName="university_name"
+                            [ngClass]="{'is-invalid':submitted && f.Education_more_array.controls[i].controls.university_name.errors}">
+                         <div *ngIf="submitted && f.Education_more_array.controls[i].controls.university_name.errors" class="invalid-feedback">
+                            <div *ngIf="f.Education_more_array.controls[i].controls.university_name.errors.required">
+                               University is required
+                            </div>
+                         </div>
+                         <div  id="{{'UniversitySuggestionData'+i}}" >
+                            <div class="de_3">
+                            <div *ngFor="let Sugg of UniversitySuggestionData" class="suggestion">
+                               <span (click)="setSuggestionValue(Sugg.university,'university',i)" class="pointer">{{Sugg.university}}</span>
+                            </div>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="form-group col-md-6 mb-3">
+                         <label for="inputState" class="labels-1">Degree</label>
+                         <!-- <select class="form-control" formControlName="degree" id="{{'degree'+educ.id}}"
+                            [ngClass]="{'is-invalid':submitted && f.degree.errors}">
+                            <option selected value="">Select Degree</option>
+                            <option *ngFor="let degree of DegreeData" value="{{degree.id}}">{{degree.name}}</option>
+                         </select> -->
+ 
+                         <ngx-select-dropdown [config]="config_degree" [options]="DegreeData"  class="degreeee"
+                         formControlName="degree" id="{{'degree'+educ.id}}" [ngClass]="{'is-invalid':submitted && f.Education_more_array.controls[i].controls.degree.errors}"
+                             [multiple]="false">
+                         </ngx-select-dropdown>
+ 
+                         <!-- <ng-multiselect-dropdown
+                     placeholder="Select Degree"
+                     [settings]="generalSettings"
+                     [data]="DegreeData"
+                     formControlName="degree" id="{{'degree'+educ.id}}" [ngClass]="{'is-invalid':submitted && f.degree.errors}"
+                     >
+                     </ng-multiselect-dropdown> -->
+                         <div *ngIf="submitted && f.Education_more_array.controls[i].controls.degree.errors" class="invalid-feedback">
+                            <div *ngIf="f.Education_more_array.controls[i].controls.degree.errors.required">
+                               Degree is required
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="form-row">
+                      <div class="form-group col-md-6 mb-3">
+                         <label for="inputEmail4" class="labels-1">Field of study</label>
+                         <!-- <select id="inputState" class="form-control" formControlName="study_field" id="{{'study_field'+educ.id}}" [ngClass]="{'is-invalid':submitted && f.study_field.errors}">
+                        <option selected>Select</option>
+                        <option>...</option>
+                        </select> -->
+                         <input type="text" class="form-control dem" placeholder="Enter Field of Study" (keyup)="StudySuggestion($event,i)" autocomplete="off"
+                            formControlName="study_field" id="{{'study_field'+educ.id}}"
+                            [ngClass]="{'is-invalid':submitted && f.Education_more_array.controls[i].controls.study_field.errors}">
+ 
+                         <div *ngIf="submitted && f.Education_more_array.controls[i].controls.study_field.errors" class="invalid-feedback">
+                            <div *ngIf="f.Education_more_array.controls[i].controls.study_field.errors.required">
+                               Fiels of Study is required
+                            </div>
+                         </div>
+                         <div id="{{'StudySuggestionData'+i}}" >
+                            <div class="de_3 ">
+                            <div *ngFor="let Sugg of StudySuggestionData" class="suggestion">
+                               <span (click)="setSuggestionValue(Sugg.study,'study',i)" class="pointer">{{Sugg.study}}</span>
+                            </div>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="form-group col-md-6 mb-3">
+                         <label for="inputEmail4" class="labels-1">Year of Completion</label>
+ 
+                         <!-- <input type="date" class="form-control dem" placeholder="Enter year of Completion" (change)="datechangeValidation($event,'year',i)"
+                            formControlName="year_completion" id="{{'year_completion'+educ.id}}"
+                            [ngClass]="{'is-invalid':submitted && f.Education_more_array.controls[i].controls.year_completion.errors}"> -->
+ 
+                            <input type="text"
+                            class="form-control"
+                            placeholder="DD/MM/YYYY"
+                            bsDatepicker (ngModelChange)="datechangeValidation($event,'year',i)"
+                            formControlName="year_completion" id="{{'year_completion'+educ.id}}"
+                            [ngClass]="{'is-invalid':submitted && f.Education_more_array.controls[i].controls.year_completion.errors}">
+
+                            
+                         <div *ngIf="submitted && f.Education_more_array.controls[i].controls.year_completion.errors" class="invalid-feedback">
+                            <div *ngIf="f.Education_more_array.controls[i].controls.year_completion.errors.required">
+                               Year of Completion is required
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   </div>
+                   <div class="bor"></div>
+                </div>
+                <button class="btn btn-primary theme" (click)="addMoreEducation()"><i class="fa fa-pencil"></i>Add
+                   More</button>
+             </div>
+             <br>
+ 
+          </div>
+          <div class="row">
+             <div class="ds3" formArrayName="Experience_more_array">
+                <div class="sample_12">
+                <abbr class="file-title">Work Experience</abbr>
+                <P>Please write your employment history beginning with your recent employment to the oldest. You can add also any freelance/internship experience, Incase you don't have any full-time experience yet. </P>
+               </div>
+                <div class="" *ngFor="let expe of experinceControls; let i=index">
+                   <div [formGroupName]="i">
+                      <div class="d-sm-flex flex-wrap align-items-center d-block mb-md-3 mb-0 " >
+                      <div class="mr-auto pr-3 ">
+                         <h4 class="file-title">Work Experience {{i+1}}</h4>
+                   </div>
+                   <button class="btn btn-danger shadow btn-xs sharp" (click)="removeAddMoreExperience()"
+                   *ngIf="experinceControls.length >1"><i class="fa fa-trash"></i></button>       
+                   </div>
+                   <!-- <button class="btn btn-danger theme-remove" (click)="removeAddMoreExperience()"
+                   *ngIf="experinceControls.length >1"><i class="fas fa-folder-minus"></i>Remove</button> -->
+                   <div class="form-row">
+                      <div class="form-group col-md-6 mb-3">
+                         <label for="inputPassword4" class="labels-1">Job title</label>
+                         <input type="text" class="form-control" id="{{'job_title'+i}}" (keyup)="jobTitleSuggestion($event,i)" autocomplete="off"
+                            placeholder="Enter Job Title" formControlName="job_title" 
+                            [ngClass]="{'is-invalid':submitted && f.Experience_more_array.controls[i].controls.job_title.errors}">
+                          
+                         <div *ngIf="submitted && f.Experience_more_array.controls[i].controls.job_title.errors" class="invalid-feedback">
+                            <div *ngIf="f.Experience_more_array.controls[i].controls.job_title.errors.required">
+                               Job Title is required
+                            </div>
+                         </div>
+                         <div  id="{{'jobTitleSuggestionData'+i}}" >
+                                  <div class="de_3 ">
+                                  <div *ngFor="let Sugg of jobTitleSuggestionData" class="suggestion">
+                                     <span (click)="setSuggestionValue(Sugg.job_title,'job',i)" class="pointer">{{Sugg.job_title}}</span>
+                                  </div>
+                               </div>
+                         </div>
+                      </div>
+                      
+                      <div class="form-group col-md-6 mb-3">
+                         <label for="inputEmail4" class="labels-1">Company</label>
+                         <input type="text" class="form-control" id="{{'company_name'+i}}" (keyup)="companySuggestion($event,i)" autocomplete="off"
+                            placeholder="Enter Company name" formControlName="company_name"
+                            [ngClass]="{'is-invalid':submitted && f.Experience_more_array.controls[i].controls.company_name.errors}"
+                         >
+                         <div *ngIf="submitted && f.Experience_more_array.controls[i].controls.company_name.errors" class="invalid-feedback">
+                            <div *ngIf="f.Experience_more_array.controls[i].controls.company_name.errors.required">
+                               Company is required
+                            </div>
+                         </div>
+                         <div id="{{'companySuggestionData'+i}}" >
+                            <div class="de_3 ">
+                            <div *ngFor="let Sugg of companySuggestionData" class="suggestion">
+                               <span (click)="setSuggestionValue(Sugg.company,'company',i)" class="pointer">{{Sugg.company}}</span>
+                            </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="form-row">
+                      <div class="form-group col-md-4 mb-3">
+                         <label for="inputCity" class="labels-1">Country</label>
+                         <!-- <select id="{{'job_country'+i}}" name="{{'job_country'+i}}" class="form-control"
+                         (change)="getStateExper($event)" formControlName="job_country"
+                         [ngClass]="{'is-invalid':submitted && f.job_country.errors}">
+ 
+                         <option value="">Choose country</option>
+                         <option *ngFor="let country of countryData" value="{{country.country_name}}">
+                            {{country.country_name}}</option>
+                      </select> -->
+ 
+                         <ngx-select-dropdown [config]="config" [options]="countryData" 
+                            (change)="getStateExper($event,i)" formControlName="job_country"
+                             [multiple]="false" [ngClass]="{'is-invalid':submitted && f.Experience_more_array.controls[i].controls.job_country.errors}">
+                         </ngx-select-dropdown>
+                         
+                         <div *ngIf="submitted && f.Experience_more_array.controls[i].controls.job_country.errors" class="invalid-feedback">
+                            <div *ngIf="f.Experience_more_array.controls[i].controls.job_country.errors.required">
+                               Country is required
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                         <label for="inputState" class="labels-1">State</label>
+                         <!-- <select id="{{'job_state'+i}}" class="form-control" (change)="getCityExper($event)"
+                         formControlName="job_state" [ngClass]="{'is-invalid':submitted && f.job_state.errors}">
+                         <option value="">Select State</option>
+                         <option *ngFor="let state of stateDataExper" value="{{state.state_name}}">{{state.state_name}}
+                         </option>
+                      </select> -->
+                         <ngx-select-dropdown style="z-index: 9999 !important;" [config]="config_job_state" [options]="stateDataExper"
+                            id="{{'job_state'+i}}" (change)="getCityExper($event,i)" formControlName="job_state" 
+                            [ngClass]="{'is-invalid':submitted && f.Experience_more_array.controls[i].controls.job_state.errors}"
+                          [multiple]="false">
+                         </ngx-select-dropdown>
+                         <div *ngIf="submitted && f.Experience_more_array.controls[i].controls.job_state.errors" class="invalid-feedback">
+                            <div *ngIf="f.Experience_more_array.controls[i].controls.job_state.errors.required">
+                               State is required
+                            </div>
+                         </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                         <label for="inputZip" class="labels-1">City</label>
+                         <!-- <select id="{{'job_city'+i}}" class="form-control" formControlName="job_city"
+                         [ngClass]="{'is-invalid':submitted && f.job_city.errors}">
+                         <option value="">Select City</option>
+                         <option *ngFor="let city of CityDataExper" value="{{city.city_name}}">{{city.city_name}}
+                         </option>
+                      </select> -->
+ 
+                         <ngx-select-dropdown [config]="config_city" [options]="CityDataExper"
+                            iid="{{'job_city'+i}}" formControlName="job_city"
+                            [ngClass]="{'is-invalid':submitted && f.Experience_more_array.controls[i].controls.job_city.errors}" [multiple]="false">
+                         </ngx-select-dropdown>
+                         
+                         <div *ngIf="submitted && f.Experience_more_array.controls[i].controls.job_city.errors" class="invalid-feedback">
+                            <div *ngIf="f.Experience_more_array.controls[i].controls.job_city.errors.required">
+                               City is required
+                            </div>
+                         </div>
+                      </div>
+                      <div class="bor"></div>
+                   </div>
+                   <div class="form-row">
+                      <div class="form-group selft  col-md-6 mb-3">
+                         <label class="form-check-label_cue">
+                            <input type="checkbox" class="nom" id="{{'currently_working'+i}}"
+                               name="{{'currently_working'+i}}" class="form-check-input"
+                               formControlName="currently_working" (click)="currentlyWorking(i)">I Currently work
+                            here
+                         </label>
+                      </div>
+                   </div>
+                   <div class="form-row">
+                      <div class="form-group col-md-3 mb-3">
+                         <label for="inputState" class="labels-1 ">From</label>
+                         <!-- <input type="date" class="form-control dem" id="{{'experience_from'+i}}" placeholder="" (change)="FromTodateValidation($event,'from',i)"
+                            formControlName="experience_from" [ngClass]="{'is-invalid':submitted && f.Experience_more_array.controls[i].controls.experience_from.errors}"
+                            > -->
+
+                            <input type="text"
+                            class="form-control"
+                            placeholder="DD/MM/YYYY"
+                            bsDatepicker id="{{'experience_from'+i}}"  (ngModelChange)="FromTodateValidation($event,'from',i)"
+                            formControlName="experience_from" [ngClass]="{'is-invalid':submitted && f.Experience_more_array.controls[i].controls.experience_from.errors}"
+                            >
+
+                         <div *ngIf="submitted && f.Experience_more_array.controls[i].controls.experience_from.errors" class="invalid-feedback">
+                            <div *ngIf="f.Experience_more_array.controls[i].controls.experience_from.errors.required">
+                               Experience From is required
+                            </div>
+                         </div>
+                      </div>
+                      <div class="form-group col-md-3 mb-3" id="{{'notworking'+i}}">
+                         <label for="inputState" class="labels-1">To</label>
+                         <!-- <input type="date" class="form-control dem" id="{{'experience_to'+i}}" placeholder="" (change)="FromTodateValidation($event,'to',i)"
+                            formControlName="experience_to"> -->
+                            <input type="text"
+                            placeholder="DD/MM/YYYY"
+                            bsDatepicker class="form-control dem" id="{{'experience_to'+i}}" (ngModelChange)="FromTodateValidation($event,'to',i)"
+                            formControlName="experience_to">
+
+                         <p class="error" id="experience_to_error"></p>
+                      </div>
+                   </div>
+                   <div class="bor"></div>
+                   </div>
+                </div>
+                
+                <button class="btn btn-primary theme" (click)="addMoreExperience()"><i class="fa fa-pencil"></i>Add
+                   More</button>
+             </div>
+          </div>
+          <div class="row">
+             <div class="ds3">
+                <legend class="col-form-label col-sm-2 pt-0" class="labels-2">Areas of Expertise</legend>
+                <div class="form-row" *ngFor="let expert of expertiseArray ;let i= index" formArrayName="expertise_area">
+                  <div class="form-check-inline" [formGroupName]="i">
+                     <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" [(ngModel)]="expert.value"   formControlName="expert_name"  
+                           (change)="onCheckboxChange($event)"> {{expert.name}}
+                     </label>
+                  </div>
+               </div>
+              <span id="expertError" class="error"></span>
+                <!-- <p class="error" *ngIf="this.ApplicationForm.controls['expertise_area'].errors?.required">
+                   Checkbox is required, select atleast one value.
+                </p> -->
+             </div>
+          </div>
+          <!--<div class="form-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile">
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            </div>-->
+          <div class="row">
+             <div class="ds3">
+                <div class="sample_12">
+                   <abbr class="file-title">Resume upload</abbr>
+                  </div>
+                <div style="padding-bottom: 18px;">
+               
+                  <div class="input-group uploa">
+                     <div class="custom-file">
+                         <input type="file" class="custom-file-input" id="pickResume" (change)="uploadmulti($event)">
+                         <label class="custom-file-label selected" id="resumeName"></label>
+                         <!-- <button class="btn btn-danger removeresumebtn shadow btn-xs sharp pointer" *ngIf="Imagename" (click)="removeResume()" >
+                            <i class="fa fa-trash" ></i>
+                        </button> -->
+                        <input type="hidden" class="custom-file-input" formControlName="uplaod_resume" 
+                         [ngClass]="{'is-invalid':submitted && f.uplaod_resume.errors}">
+                         <div *ngIf="submitted && f.uplaod_resume.errors" class="invalid-feedback">
+                     <div *ngIf="f.uplaod_resume.errors.required">
+                        Resume is required
+                     </div>
+                  </div> 
+                  <button type="submit" class="btn btn-primary theme btn-one cus_2"  *ngIf="!Imagename" (click)="SelectImage()">Choose File</button>
+                  <button type="submit" class="btn btn-danger theme btn-one cus_2" *ngIf="Imagename" (click)="removeResume()">Remove</button>
+
+                     </div>
+          
+                 </div>
+                   <!-- <input id="data_10" name="data_10" type="file" class="form-control" formControlName="uplaod_resume"
+                      (change)="uploadmulti($event)" [ngClass]="{'is-invalid':submitted && f.uplaod_resume.errors}">
+                   <div *ngIf="submitted && f.uplaod_resume.errors" class="invalid-feedback">
+                      <div *ngIf="f.uplaod_resume.errors.required">
+                         Resume is required
+                      </div>
+                   </div> -->
+                </div>
+             </div>
+          </div>
+          <div class="row">
+             <div class="ds3">
+                <div class="sample_12">
+                   <abbr class="file-title">Referral Code</abbr>
+                  </div>
+          <div class="form-group col-md-12 dfdf">
+             <input type="text" class="form-control" formControlName="referral_code">
+          </div>
+          <div class="btn-two">
+             <!-- <button class="btn btn-primary theme btn-one" type="submit"  (click)="ReviewApplication()">Review</button> -->
+             <button class="btn btn-primary theme btn-one" type="submit" (click)="submitApplication()">Submit</button>
+          </div>
+       </div>
+       </div>
+       </form>
+    </div>
+ </div>

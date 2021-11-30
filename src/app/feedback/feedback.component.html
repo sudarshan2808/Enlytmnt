@@ -1,0 +1,130 @@
+<!--<div class="container">
+<div class="row">
+<div class="col-md-12">
+    <div class="review-box"> 
+        <h2>Reviews</h2>
+        <div class="review-1">
+          <span>Rating:
+        <select>
+            <option value="0">All</option>
+            <option value="1">Not Happy</option>
+            <option value="2">Could be better</option>
+            <option value="3">Good</option>
+            <option value="4">Happy</option>
+            <option value="5">Super Happy </option>
+        </select>
+        </span>
+          <span class="sort">Sort by:
+            <select>
+                <option value="0">Newest First</option>
+                <option value="1">Oldest First</option>
+                <option value="2">Ratings</option>
+              </select>
+          </span>
+
+          <span class="sort">Time Range
+            <select>
+                <option value="0">This week</option>
+                <option value="1">This month</option>
+                <option value="2">This quarter</option>
+                <option value="3">This Year</option>
+              </select>
+          </span>
+          <span class="export-btn">
+                <button type="button" class="btn btn-square btn-outline-info">Export to csv...</button>
+          </span>
+        </div>
+    </div>
+</div>
+</div>
+</div>-->
+<section class="reviews-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card carding">
+                    <div class="cardse">
+                        <div class="headings">
+                            <h2 class="text-center heads">Recent Reviews</h2>
+                            <p class="text-center para1">Here you would have a sentence that would explain things</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4" *ngFor="let feedback of feedbackData">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="media media-1 ">
+                                            <img class="mr-3 img-fluid " width="60"
+                                                src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                                width="24" alt="" class="photo1">
+                                            <div class="media-body">
+                                                <h5 class="mt-0">{{feedback.student_id}}
+                                                    <span class="float-right"><img src="./assets/images/in-love.png"
+                                                            class="lovesimg">
+                                                        <!--<i class="fa fa-smile-o" aria-hidden="true"></i>-->
+                                                    </span>
+                                                </h5>
+                                                <!--<p class="markt">Marketing director,London</p>-->
+
+                                                <div class="seds">
+                                                    <h6 class="happys">Positive</h6>
+                                                    <ul class="frndses">
+                                                        <li class="frnds-1">Friendliness</li>
+                                                        <li class="frnds-1">Explanation of the problem areas</li>
+                                                    </ul>
+                                                    <ul class="frndses1">
+                                                        <li class="frnds-1">Session satisfaction</li>
+                                                        <li class="frnds-1"> Value for money</li>
+                                                        <li class="frnds-1"> Useful suggestions</li>
+                                                    </ul>
+                                                    <div class="row">
+                                                        <div class="col rb1">
+                                                            <h6 class="happys">Service Type</h6>
+                                                            <ul class="frndses">
+                                                                <li class="frnds-2">Anxiety(on-demand)</li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="col">
+                                                            <h6 class="happys">Groups</h6>
+                                                            <ul class="frndses">
+                                                                <li class="frnds-3">ABC School</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="f4line">
+                                                    <p class="mb-0 para">{{feedback.feedback}}</p>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <button type="button" class="btn btn-rounded btn-warning">
+                                                            <span class="btn-icon-left text-warning"><i
+                                                                    class="fa fa-star" aria-hidden="true"></i>
+                                                            </span>Recommended</button>
+                                                    </div>
+                                                    <div class="col co1r">
+                                                        <span class="float-right days-times">18 days ago
+                                                        </span><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <hr>
+                        <h2 class="text-center views pointer" [routerLink]="['/feedback_list']">View More</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

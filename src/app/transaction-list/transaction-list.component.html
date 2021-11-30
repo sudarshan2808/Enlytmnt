@@ -1,0 +1,130 @@
+<div class="loader_div" *ngIf="isInserting">
+    <span><img src="./assets/images/loading.gif"></span>
+ </div>
+<div class="container-fluid">
+    <div class="col-lg-12">
+        <div class="card cards-1">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <div class="row d-flex align-items-center">
+                        <span>
+                            <input type="search" class="form-control" [(ngModel)]="searchKey" name="searchKey" placeholder="Search" style="margin-left: 20px;">
+
+                        </span>
+                        <div class="sedrs">
+                            <span>
+                                <select [(ngModel)]="searchDDFilter" name="searchDDFilter" (change)="filterSearch($event)" class="selecting">
+                                    <option value="this week" selected> This week</option>
+                                    <option value="this month"> This month</option>
+                                    <option value="Custom range"> Custom range</option>
+    
+                                </select>
+                           
+                            </span>
+                          
+                        </div>
+                     
+                    </div>
+                    <div class="row">
+                        <div class="sample">
+                            <div *ngIf="customdate" class="trasn-date">
+                                <label class="submt-label">From Date&nbsp;&nbsp;</label>
+                                <input type="text" class="" autocomplete="off" [(ngModel)]="fromDate" name="fromDate"
+                                placeholder="DD/MM/YYYY"
+                                bsDatepicker  id="inputEmail4">
+                                <label class="submt-label">To Date&nbsp;&nbsp;</label>
+                                <input type="text" class="" autocomplete="off" [(ngModel)]="toDate" name="toDate"
+                                placeholder="DD/MM/YYYY"
+                                bsDatepicker   id="inputEmail4" >
+                                <button class="btn btn-primary button-shape" (click)="dateRangeData()" >Submit</button>
+                            </div>
+                    </div>
+                    </div>
+                    <table class="table table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th class="width50">
+                                </th>
+                                <th>
+                            </th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                    <th>
+                                        <!-- <div class="basic-dropdown">
+                                            <div class="dropdown show">
+                                                <button type="button" class="btn btn-primary dropdown-toggle btn-three" data-toggle="dropdown" aria-expanded="true"><span class="cales"><i class="fa fa-calendar" aria-hidden="true"></i></span>This week
+                                                </button>
+                                                <div class="dropdown-menu show" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -115px, 0px);">
+                                                    <a class="dropdown-item">This week</a>
+                                                    <a class="dropdown-item">This month</a>
+                                                    <a class="dropdown-item">Custom range</a>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                     
+                                       
+                                        
+                                    </th>
+                            </tr>
+                            <tr>
+                                <th class="width50">
+                                </th>
+                                <th *ngIf="statusCount"><span><i class="fa fa-circle text-success mr-1"></i></span><b class="trans">{{statusCount.paid}}</b> Paid transactions</th>
+                                <th *ngIf="statusCount"><span><i class="fa fa-circle text-warning mr-1"></i></span><b class="trans">{{statusCount.pending}}</b> Pending transactions</th>
+                                <th *ngIf="statusCount"><span><i class="fa fa-close text-danger mr-1"></i></span><b class="trans">{{statusCount.cancel}}</b> Cancelled transactions</th>
+                                <th></th>
+                                <th>
+                                    <div class="d-flex">
+                                        <a class="btn btn-primary shadow btn-xs sharp mr-1" (click)="exportAsXLSX()"><i class="fa fa-download"></i></a>
+                                        <a    class="btn btn-danger shadow btn-xs sharp" (click)="deletetransactionList()"><i class="fa fa-trash"></i></a>
+                                    </div>
+                                </th>
+                            </tr>
+   
+                            <tr>
+                                <th class="width50">
+                                    <div class="custom-control custom-checkbox checkbox-success check-lg mr-3">
+                                        <input type="checkbox" class="custom-control-input" id="checkAll" (change)="checkAllList($event)">
+                                        <label class="custom-control-label" for="checkAll"></label>
+                                    </div>
+                                </th>
+                                <th>Transaction Id</th>
+                                <th>Transaction date</th>
+                                <th>Name</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let trans of transactionData |  paginate: { itemsPerPage: 5, currentPage: 1 } | filter:searchKey; let i= index">
+                                <td>
+                                    <div class="custom-control custom-checkbox checkbox-success check-lg mr-3">
+                                        <input type="checkbox" class="custom-control-input" id="{{'customCheckBox'+i}}"  (change)="singleCheck($event,trans.id,i)">
+                                        <label class="custom-control-label" for="{{'customCheckBox'+i}}"></label>
+                                    </div>
+                                </td>
+                                <td><strong class="tds">{{trans.id}}</strong></td>
+                                <td>{{trans.date}}</td>
+                                <td><div class="d-flex align-items-center">
+                                    <img  src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" width="20" alt="" class="photo1" width="24" alt="">
+                                     <span class="w-space-no">{{trans.student_name}}</span></div></td>
+                                <td>{{trans.amount}}</td>
+                                <td><div class="d-flex align-items-center"><i class="fa fa-circle text-success mr-1"></i> {{trans.status}}</div></td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                    <div *ngIf="transactionData == null || transactionData == undefined || transactionData.length == 0 || (transactionData | filter: searchKey).length ==0">
+                        <span class="text-danger">No Data Found</span>
+                    </div>
+                    <div>
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

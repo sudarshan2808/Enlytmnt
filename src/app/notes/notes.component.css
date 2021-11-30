@@ -1,0 +1,343 @@
+h3.mt-4.mb-1.head-notes {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0px !important;
+    padding-top: 14px;
+}
+.fa-sticky-note-o:before{
+    content: "\f24a";
+    font-size: 17px;
+    position: relative;
+    bottom: 4px;
+    left: -10px;
+}
+
+p.text-muted.milses {
+    font-size: 14px;
+    font-weight: 800;
+}
+.profile-photo img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+h3.mt-4.mb-1.head-notes1 {
+    font-size: 19px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0px !important;
+}
+.head-notes3 {
+    background: #eff1f7;
+    margin-top: 20px;
+    margin-bottom: 130px;
+    text-align: center;
+}
+.head-notes2 {
+    background: #eff1f7;
+    margin-top: 20px;
+    /* margin-bottom: 130px; */
+}
+span.upcomes {
+    font-size: 11px;
+    font-weight: bold;
+    color: #00000096;
+}
+a.btn.btn-outline-primary.btn-rounded.mt-3.px-5.btn-two {
+    background:#0099d9;
+    border: #0099d9;
+    margin-bottom: 20px;
+    border-radius: 7px !important;
+    padding: 12px 33px !important;
+    color: white !important;
+}
+.card-footer.pt-0.pb-0.text-center.footeting {
+    padding: 20px 14px;
+}
+a.nav-link.externals.active {
+    background: #0099d9 !important;
+    padding: 12px 43px !important;
+    border: 1px solid #0099d9 !important;
+    border-radius: 1px !important;
+    color: white;
+    font-size: 12px;
+}
+h4.homes-notes {
+    border-bottom: 1px solid #0099d9 ;
+    padding: 0px 20px !important;
+    text-align: center;
+    border-radius: 4px;
+}
+
+span.notesw {
+    position: absolute;
+    left: 32px;
+}
+h1.subjs {
+    text-align: center;
+    font-size: 20px;
+}
+.btn-ones1 {
+    text-align: right;
+}
+.forms-areas {
+    background: #eff0f7;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+a.btn.btn-outline-primary.btn-rounded.mt-3.px-5.btn-two1 {
+    background: #0099d9;
+    border: #0099d9;
+    margin-bottom: 20px;
+    border-radius: 7px !important;
+    padding: 12px 43px !important;
+    color: white !important;
+}
+a.nav-link.show.homies {
+    background: #0099d9;
+    color: white;
+    padding: 13px 145px;
+    margin: 10px 0px;
+}
+a.nav-link.show.homies1 {
+    color: black;
+    padding: 13px 145px;
+    margin: 10px 0px;
+}
+h3.titling {
+    font-size: 16px;
+}
+.titles-head {
+    padding: 33px 15px;
+}
+i.fa.fa-files-o {
+    font-size: 20px;
+    color: blue;
+}
+h3.titling1 {
+    font-size: 13px;
+    color: blue;
+}
+h3.heads-boxs {
+    font-size: 11px;
+    padding: 10px 11px;
+    float: right;
+}
+
+span.files-icon {
+    padding-right: 10px;
+}
+
+span.files-icon i {
+    color: black !important;
+}
+
+.row.fdddd {
+    background: #ffffff;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    box-shadow: 0px 12px 23px 0px rgb(160 44 250 / 8%);
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.card.cardes1 {
+    padding: 0px 7px;
+}
+
+.dwn-btn {
+    margin: 10px 0px;
+    color: blue;
+}
+p {
+    font-size: 13px;
+    margin: 0px;
+    color: #00000096;
+}
+label {
+    font-size: 14px;
+    color: #00000096;
+}
+
+
+.row.desss {
+    float: right;
+    position: relative;
+    left: 14px;
+}
+
+h3.mb-1 {
+    font-size: 17px;
+}
+
+
+h3.jann {
+    font-size: 13px;
+    font-weight: 900;
+}
+
+
+h3.jann1 {
+    font-size: 13px;
+    font-weight: 900;
+    color: #0000004d;
+}
+
+p.times-slct1 {
+    font-size: 11px !important;
+    font-weight: bold;
+    color: black;
+}
+p.times-slct2{
+    font-size: 11px !important;
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    
+}
+
+h3.jann2 {
+    font-size: 17px;
+    font-weight: bold;
+    color: blue;
+    position: absolute;
+    top: 8px;
+    left: 27px;
+}
+
+span.spaness {
+    /* margin-right: 20px !important; */
+    position: relative;
+    left: 4px;
+    top: 8px;
+    color: blue;
+}
+
+i.fa.fa-sticky-note-o {
+    font-size: 23px;
+}
+.widget-timeline .timeline:before{
+
+    display: none
+}
+
+
+
+
+.col-md-12.notescomp {
+    background: #eff1f7;
+    /* margin-top: 20px; */
+}
+
+li.listing {
+    margin-top: 20px;
+}
+
+a.timeline-panel.text-muted {
+    background: white !important;
+    border: white !important;
+}
+a.nav-link.active {
+    background: #081d67 !important;
+    color: white !important;
+    font-size: 12px;
+    font-weight: bold;
+}
+.rb{
+    font-size: 17px;
+   
+}
+/* .rb1{padding-left:11px;} */
+/* .rb3{ padding-left: 10px;} */
+
+.height370 {
+    height: 511px !important;
+}
+
+b {
+    font-size: 14px;
+    position: relative;
+    bottom: 0.1rem;
+}
+h5.preff {
+    font-size: 13px;
+    font-weight: 600;
+}
+.dark-btn2 {
+    position: absolute;
+    right: 0px;
+}
+button.btn.btn-primary.sends {
+    margin-left: 12px;
+}
+button.btn.btn-primary.sends {
+    background:#7c95fb;
+    border: #7c95fb;
+}
+button.btn.btn-primary.sends:hover{
+      background-color: #597aff;
+}
+.head-notes h3 {
+    text-align: center;
+}
+.head-notes3 {
+    background: #eff1f7;
+    margin-top: 20px;
+    margin-bottom: 130px;
+    text-align: center;
+}
+.btn:not(:disabled):not(.disabled){
+    cursor: pointer;  
+    position: relative;
+    right: 15px;
+}
+
+small.intern {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    position: relative;
+    bottom: 1.5rem;
+    left: 292px;}
+
+a.timeline-panel.text-muted {
+    background: white !important;
+    border: white !important;
+    position: relative;
+    right: 3rem;
+    width: 101%;}
+    
+    
+a.nav-link.active {
+    background: #7c95fb !important;
+    color: white !important;
+    font-size: 12px;
+    font-weight: bold;
+}
+a.nav-link.active:hover{
+    background-color: #597aff
+    ;
+}
+.form-check{
+    position: relative;
+    display: block;
+    padding-left: 0.15rem;
+}
+
+ul.timeline {
+    background: #eff1f7;
+    padding: 10px 3px;
+}
+.form-control:hover, .form-control:focus, .form-control.active{
+    box-shadow: none;
+    background: #fff;
+    color: #060505;
+}
+p {
+    font-size: 12px;
+    margin: 0px;
+    color: #00000096;
+}
+.widget-timeline .timeline > li > .timeline-panel p{
+    font-size: 14px;
+}

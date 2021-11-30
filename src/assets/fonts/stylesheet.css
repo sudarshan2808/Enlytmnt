@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Skytree';
+    src: url('Skytreeone.eot');
+    src: url('Skytreeone.eot?#iefix') format('embedded-opentype'),
+        url('Skytreeone.woff2') format('woff2'),
+        url('Skytreeone.woff') format('woff'),
+        url('Skytreeone.ttf') format('truetype'),
+        url('Skytreeone.svg#Skytreeone') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

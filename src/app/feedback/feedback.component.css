@@ -1,0 +1,166 @@
+.review-box {
+    background: white;
+    padding: 30px 30px;
+}
+.review-1 {
+    text-align: center;
+}
+span.sort {
+    margin-left: 62px;
+}
+span.export-btn {
+    float: right;
+}
+span.export-btn button {
+    font-weight: bold;
+}
+img.photo1 {
+    width: 39px;
+    height: 39px;
+    position: absolute;
+    object-fit: cover;
+    left: 1.2rem;
+    top: 2.1rem;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.media.media-1 {
+    margin-bottom: 30px;
+}
+p.mb-0.para {
+    text-align: justify;
+    font-size: 13px;
+    color: #00000052;
+    text-overflow: ellipsis;
+}
+p.markt {
+    font-size: 12px;
+}
+.cardse {
+    padding: 20px 25px;
+}
+h2.text-center.views {
+    font-size: 16px;
+    margin: 25px 0px;
+}
+.headings {
+    padding-bottom: 25px;
+}
+p.text-center.para1 {
+    font-size: 12px;
+}
+
+/*.card.carding {
+    margin: 0px 60px;
+}*/
+
+.btn-icon-left {
+    background: #fff;
+    border-radius: 10rem;
+    display: inline-block;
+    float: left;
+    position: relative;
+    left: 9px;
+    box-shadow: 15px 12px 23px 0px rgb(0 0 0 / 5%) !important;
+}
+
+button.btn.btn-rounded.btn-warning {
+    background: white !important;
+    box-shadow: 5px 12px 23px 0px rgb(0 0 0 / 5%) !important;
+}
+
+button.btn.btn-rounded.btn-warning {
+    color: white;
+}
+
+span.frind {
+    background: aliceblue;
+    padding: 3px 20px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+h6.happys {
+    margin: 8px 0px;
+    font-size: 13px;
+}
+
+ul.frndses {
+    display: flex;
+}
+li.frnds-1 {
+    background: aliceblue;
+    font-size: 11px;
+    padding: 0px 8px;
+    margin-right: 4px;
+    text-align: start;
+    border-radius: 5px;
+}
+li.frnds-2 {
+    background: aliceblue;
+    font-size: 11px;
+    padding: 0px 8px;
+    margin-right: 4px;
+    text-align: start;
+    border-radius: 5px;
+}
+li.frnds-3 {
+    background: aliceblue;
+    font-size: 11px;
+    padding: 0px 8px;
+    margin-right: 4px;
+    text-align: start;
+    border-radius: 5px;
+}
+span.float-right.days-times {
+    font-size: 11px;
+    position: relative;
+    top: 11px;
+}
+i.fa.fa-smile-o {
+    color: #ffbc11;
+}
+ul.frndses1 {
+    display: flex;
+    margin: 10px 0px;
+}
+button.btn.btn-rounded.btn-warning {
+    color: black !important;
+    padding: 10px 10px;
+    font-size: 10px;
+}
+
+img.lovesimg {
+    width: 6%;
+    float: right;
+    position: absolute;
+    right: 21%;
+    
+}
+.f4line{
+    min-height: 71px;
+    text-overflow: ellipsis;
+}
+.mt-0 {
+    margin-top: 0 !important;
+
+    position: relative;
+    left: 20%;
+    margin-top: 17px !important;
+    bottom: -0.8rem;
+}
+::ng-deep .card-body{
+    padding: 0.875rem;
+}
+.seds{
+    margin-top: 31px;
+}
+::ng-deep.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.rb1{
+    border-right: 1px solid #d8d6d6;
+}

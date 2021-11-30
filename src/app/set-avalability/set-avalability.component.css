@@ -1,0 +1,136 @@
+
+.cardE{
+  width: 101%;
+  height: 73%;
+  font-size: 18px;
+  padding: 19px;
+}
+.rectall{
+  margin-top: 3rem;
+  padding-left:2rem ;
+  padding-right: 6rem;
+}
+span.plus-icon i {
+    font-size: 24px;
+    color: black;
+}
+.rect {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    background: red;
+    
+    
+    border-radius: 4px;
+}
+
+.rect1 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    background: red;
+    border-radius: 4px;
+}
+.rect2 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    background: blue;
+    border-radius: 4px;
+}
+.rect3 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    background: greenyellow;
+    border-radius: 4px;
+}
+.rect4 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    background: yellow;
+    border-radius: 4px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 8px 0px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  span.spanings i {
+    font-size: 15px;
+    position: absolute;
+    left: -6px;
+    top: 28px;
+}
+ul.usering-list li {
+    margin: 24px 0px;
+  
+}
+button.btn.btn-primary.cancel1 {
+    float: right;
+    margin-right: 20px;
+    background-color: #081d67;
+    border: #081d67;
+}
+
+button.btn.btn-primary.cancel {
+    float: right;
+    background-color: #081d67;
+    border: #081d67;
+}

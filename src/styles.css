@@ -1,0 +1,212 @@
+/* You can add global styles to this file, and also import other style files */
+.ngx-dropdown-container .ngx-dropdown-list-container {
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 9999 !important;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    box-shadow: 5px 5px 5px 0 rgb(0 0 0 / 21%);
+    overflow-y: auto;
+}
+.ngx-dropdown-container .ngx-dropdown-button .display-text {
+    /* color: #b1b1b1 !important; */
+    color: #525252 !important;
+}
+.strength-meter{
+  
+    margin: 0px auto !important;
+   
+}
+
+
+
+.multiselect-dropdown .dropdown-btn {
+    display: inline-block;
+    border: 1px solid #f0f1f5 !important;
+    width: 100%;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1.52857143;
+    text-align: left;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border-radius: 4px;
+}
+
+.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret:before {
+    position: relative;
+    right: 0;
+    top: 65%;
+    color: #0f0d0d;
+    margin-top: 4px;
+    border-style: solid;
+    border-width: 8px 8px 0;
+    border-color: #d7cccc transparent !important;
+    content: "";
+}
+
+.ngx-dropdown-container .button {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #d7cccc transparent !important;
+    border-radius: 4px;
+    color: #333;
+    color: #B1B1B1 !important;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+.multiselect-item-checkbox input + div:before {
+    box-sizing: content-box;
+    content: "";
+    color: #597aff !important;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    margin-top: -9px;
+    border: 2px solid #597aff !important; 
+    text-align: center;
+    transition: .4s;
+}
+
+.multiselect-item-checkbo input[type=checkbox]:checked + div:before {
+    -webkit-animation: .2s ease-in borderscale;
+    animation: .2s ease-in borderscale;
+    background: #597aff !important;
+}
+.multiselect-dropdown .dropdown-btn .selected-item{
+    border: 1px solid #597aff !important;
+    margin-right: 4px;
+    background: #597aff !important;
+    padding: 0 5px;
+    color: #fff;
+    border-radius: 2px;
+    float: left;
+    display: flex;
+    max-width: 100px;
+}
+
+.form-control.is-invalid {
+    border-color: #F94687 !important;
+    /* border-right: 0px !important; */
+    /* border-left: 0px !important; */
+    }
+/* customcontentbody */
+
+
+[data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .content-body_1 {
+    margin-left: 5rem;
+}
+[data-header-position="fixed"] .content-body_1 {
+    padding-top: 5.5rem;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+.content-body__1 {
+    margin-left: 17rem;
+}
+}
+.content-body_1 {
+    margin-left: 21.563rem;
+    z-index: 0;
+    transition: all .2s ease;
+}
+
+div#ui-datepicker-div {
+    z-index: 9999 !important;
+}
+
+img.ui-datepicker-trigger {
+    display: none;
+}
+
+ td.new { display: none; }
+ td.old { visibility: hidden; } 
+
+.datepicker.datepicker-dropdown th.dow {
+    font-weight: 700;
+}
+
+.datepicker.datepicker-dropdown th.datepicker-switch, .datepicker.datepicker-dropdown th.next, .datepicker.datepicker-dropdown th.prev {
+    font-weight: 700;
+    color: #333;
+}
+
+.gradient-9, .datepicker.datepicker-dropdown td.day:hover, .datepicker.datepicker-dropdown th.next:hover, .datepicker.datepicker-dropdown th.prev:hover, .datepicker table tr td.selected, .datepicker table tr td.active, .datepicker table tr td.today, .datepicker table tr td.today:hover, .datepicker table tr td.today.disabled, .datepicker table tr td.today.disabled:hover {
+    background: #f31e7a !important;
+    
+}
+
+.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-top {
+    /* width: 238px !important; */
+    padding: 10px 28px;
+}
+
+.gradient-9, .datepicker.datepicker-dropdown td.day:hover, .datepicker.datepicker-dropdown th.next:hover, .datepicker.datepicker-dropdown th.prev:hover, .datepicker table tr td.selected, .datepicker table tr td.active, .datepicker table tr td.today, .datepicker table tr td.today:hover, .datepicker table tr td.today.disabled, .datepicker table tr td.today.disabled:hover {
+    background: #597aff !important;
+}
+
+.datepicker.datepicker-dropdown {
+    background: #ffffff;
+    border-radius: 1px;
+    border: 1px solid #EEEEEE;
+}
+
+.datepicker table tr td span:hover, .datepicker table tr td span.focused {
+    background: #597aff !important;
+    color: white;
+}
+
+.datepicker table tr td.selected, .datepicker table tr td.active.active {
+    box-shadow: 0px 0px 30px 5px rgb(0 0 0 / 12%) !important;
+    border: 0;
+}
+
+.datepicker.datepicker-dropdown td.day, .datepicker.datepicker-dropdown th.next, .datepicker.datepicker-dropdown th.prev {
+    height: 30px;
+    width: 30px !important;
+    padding: 0;
+    text-align: center;
+    font-weight: 300;
+    border-radius: 2px !important;
+}
+
+.datepicker table tr td.today {
+    box-shadow: 0px 0px 30px 5px rgb(8 8 8 / 19%);
+    color: #ffffff;
+}
+.datepicker.datepicker-dropdown td.day:hover, .datepicker.datepicker-dropdown th.next:hover, .datepicker.datepicker-dropdown th.prev:hover {
+    box-shadow: 0px 0px 30px 5px rgb(0 0 0 / 11%);
+    color: #fff;
+}
+::ng-deep.bs-datepicker {
+    height: 350px;
+  }
+
+   .ngx-disabled {
+    pointer-events: none;
+    background-color: #ffffff !important;
+    opacity: 1;
+    cursor: no-drop;
+}
+
+.multiselect-dropdown .disabled > span {
+    background-color: #eceeef00 !important;
+}

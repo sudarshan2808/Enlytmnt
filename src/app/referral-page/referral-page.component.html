@@ -1,0 +1,280 @@
+<div class="loader_div" *ngIf="isInserting">
+   <span><img src="./assets/images/loading.gif"></span>
+</div>
+<div class="container-fluid">
+    <div class="row mr-0 ml-0">
+       <div class="col-xl-12">
+          <div class="card">
+             <div class="card-header border-0 pb-0">
+                <h5 class="card-title"><span><img src="./assets/images/medal.png" class="medalimgs"></span>Rewards and referrals</h5>
+                <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+                  <div class="toast-header headersw">
+                     <span class="excl-icons"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
+                    <strong class="mr-auto refff">Error referring: The mobile/email is already registered.</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                 
+                </div>
+             </div>
+             <hr>
+             <div class="card-body">
+                <div class="row mr-0 ml-0">
+                   <div class="col-md-4">
+                      <div class="reffpage">
+                         <h5>Your Wallet
+                            <!--<span class="info"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                            </span>-->
+                            <a href="#" data-toggle="tooltip" title="Referral Wallet is updated in the first week of every month."><span class="info"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                            </span></a>
+                         </h5>
+                         <p>0</p>
+                      </div>
+                   </div>
+                   <div class="col-md-4">
+                      <p class="reff-para"> “Hey there, I’m inviting you to join Enlytmnt, a new and fastest growing platform, to increase clients across India like me. Use my code (XXXXXX) and enter it in your application. Open this link (Short link) preferably on a laptop to begin. Take care!”</p>
+                      <p class="reff-para1">Read More</p>
+                   </div>
+                   <div class="col-md-4">
+                      <p class="reff-para1">Your referral Code
+                         <span class="ref-span"><i class="fa fa-facebook-square" aria-hidden="true"></i>
+                         </span>
+                         <span class="ref-span"><i class="fa fa-twitter" aria-hidden="true"></i>
+                         </span>
+                         <span class="ref-span"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                      </p>
+                      <form class="example" action="/action_page.php">
+                         <input type="text" readonly #userinput value="{{refferalCode}}">
+                         <button type="submit" (click)="copyInputMessage(userinput)" value="click to copy">Click to Copy</button>
+                      </form>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="row mr-0 ml-0">
+       <div class="col-xl-12">
+          <div class="card">
+             <div class="card-header border-0 pb-0">
+                <h5 class="card-title">Refer a friend</h5>
+             </div>
+            <form [formGroup]="referralForm">
+             <div class="card-body">
+                <div class="form-row">
+                   <div class="form-group col-md-3 mb-3">
+                      <input type="text" class="form-control forms1" formControlName="name" placeholder="Name" [ngClass]="{'is-invalid':submitted && f.name.errors}">
+                      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">
+                           Name is required
+                        </div>
+                     </div>
+                   </div>
+                   <div class="form-group col-md-3 mb-3">
+                      <input type="email" class="form-control" formControlName="email" placeholder="Email (optional)" >
+                   </div>
+                   <div class="form-group col-md-3 mb-3">
+                      <button type="submits" class="btn-phn">+91</button>
+                      <input type="phone" class="form-control mobiling" formControlName="phoneno" placeholder="Mobile" [ngClass]="{'is-invalid':submitted && f.phoneno.errors}">
+                      <div *ngIf="submitted && f.phoneno.errors" class="invalid-feedback">
+                        <div *ngIf="f.phoneno.errors.required">
+                           Phone Number is required
+                        </div>
+                     </div>
+                   </div>
+                   <div class="form-group col-md-3 mb-3">
+                      <button type="button" class="btn btn-primary submit-btns" (click)="sendRefferal()">Submit</button>
+                   </div>
+                </div>
+             </div>
+            </form>
+          </div>
+       </div>
+    </div>
+    <!--<div class="row mr-0 ml-0">
+       <div class="col-lg-12">
+          <div class="card">
+             <div class="card-header">
+                <h4 class="card-title">Referrals Sent</h4>
+             </div>
+             <div class="card-body">
+                <div class="table-responsive">
+                   <table class="table table-responsive-sm">
+                      <thead>
+                         <tr>
+                            <th>Name</th>
+                            <th>Request sent on</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                         <tr>
+                            <td>Kolor Tea</td>
+                            <td>15/09/2020</td>
+                            <td>8765678456</td>
+                            <td></td>
+                            <td>Pending</td>
+                         </tr>
+                         <tr>
+                            <td>Kolor Tea</td>
+                            <td>15/09/2020</td>
+                            <td>8765678456</td>
+                            <td>joe@gmail.com</td>
+                            <td>Accepted</td>
+                         </tr>
+                         <tr>
+                            <td>Kolor Tea</td>
+                            <td>15/09/2020</td>
+                            <td>8765678456</td>
+                            <td>joe@gmail.com</td>
+                            <td>Pending</td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="row mr-0 ml-0">
+      <div class="col-lg-12">
+         <div class="card">
+            <div class="card-header">
+               <h4 class="card-title">Referrals Accepted</h4>
+            </div>
+            <div class="card-body">
+               <div class="table-responsive">
+                  <table class="table table-responsive-sm">
+                     <thead>
+                        <tr>
+                           <th>Name</th>
+                           <th>User Type</th>
+                           <th>Status</th>
+                           <th>Status Updated On</th>
+                           <th>Amount earned</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Kolor Tea</td>
+                           <td>Counsellor</td>
+                           <td>Pending</td>
+                           <td>15/09/2020</td>
+                           <td>Rs.0</td>
+                        </tr>
+                        <tr>
+                           <td>Kolor Tea</td>
+                           <td>Counsellor</td>
+                           <td>Pending</td>
+                           <td>15/09/2020</td>
+                           <td>Rs.0</td>
+                        </tr>
+                        <tr>
+                           <td>Kolor Tea</td>
+                           <td>Counsellor</td>
+                           <td>Pending</td>
+                           <td>15/09/2020</td>
+                           <td>Rs.0</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>-->
+
+
+
+
+
+   <div class="row mr-0 ml-0">
+      <div class="col-xl-12">
+         <div class="card">
+             <div class="card-header">
+                 <h4 class="card-title">Referrals</h4>
+             </div>
+             <div class="card-body">
+                 <ul class="nav nav-pills justify-content-start mb-4">
+                     <li class=" nav-item">
+                         <a href="#navpills2-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Sent</a>
+                     </li>
+                     <li class="nav-item">
+                         <a href="#navpills2-2" class="nav-link" data-toggle="tab" aria-expanded="false">Accepted</a>
+                     </li>
+                 </ul>
+                 <div class="tab-content">
+                     <div id="navpills2-1" class="tab-pane active">
+                        <div class="row mr-0 ml-0">
+                           <div class="col-lg-12">
+                              <div class="card">
+                                 <div class="card-body">
+                                    <div class="table-responsive">
+                                       <table class="table table-responsive-sm">
+                                          <thead>
+                                             <tr>
+                                                <th>Name</th>
+                                                <th>Request sent on</th>
+                                                <th>Mobile</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr *ngFor="let sent of sentlist">
+                                                <td>{{sent.name}}</td>
+                                                <td>{{sent.created_at}}</td>
+                                                <td>{{sent.mobile}}</td>
+                                                <td>{{sent.email}}</td>
+                                                <td>{{sent.status}}</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div id="navpills2-2" class="tab-pane">
+                        <div class="row mr-0 ml-0">
+                           <div class="col-lg-12">
+                              <div class="card">
+                                 <div class="card-body">
+                                    <div class="table-responsive">
+                                       <table class="table table-responsive-sm">
+                                          <thead>
+                                             <tr>
+                                                <th>Name</th>
+                                                <th>User Type</th>
+                                                <th>Status</th>
+                                                <th>Status Updated On</th>
+                                                <th>Amount earned</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr *ngFor="let accepted of acceptedlist">
+                                                <td>{{accepted.name}}</td>
+                                                <td>{{accepted.type}}</td>
+                                                <td>{{accepted.status}}</td>
+                                                <td>{{accepted.updated_at}}</td>
+                                                <td>{{accepted.amount}}</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  
+                 </div>
+             </div>
+         </div>
+     </div>
+   </div>
+ </div>

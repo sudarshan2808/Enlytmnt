@@ -1,0 +1,559 @@
+<div class="container-fluid">
+    <div class="page-titles">
+       <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="javascript:void(0)">Dashborad</a></li>
+          <li class="breadcrumb-item active"><a href="javascript:void(0)">Profile</a></li>
+       </ol>
+    </div>
+    <div class="loader_div" *ngIf="isInserting">
+       <span><img src="./assets/images/loading.gif"></span>
+    </div>
+    <div class="row">
+       <div class="col-xl-4">
+          <div class="card">
+             <div class="card-body" *ngIf="counsellor_data">
+                <div class="text-center">
+                   <div class="profile-photo">
+                      <img src="http://65.2.9.193/assets/images/{{counsellor_data[0].image}}" width="100" onError="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'" class="img-fluid rounded-circle" alt="">
+                      <span><label class="switch">
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                      </label></span>
+                   </div>
+                   <h3 class="mt-4 mb-1">{{counsellor_name}}</h3>
+                   <a _ngcontent-slg-c59="" href="javascript:void()" class="btn btn-primary primry-ones">Edit Profile</a>
+                   <h6 class="mt-4">Complete Profile
+                      <span class="pull-right">90%</span>
+                   </h6>
+                   <div class="progress">
+                      <div class="progress-bar bg-info progress-animated" style="width: 90%; height:6px;" role="progressbar">
+                         <span class="sr-only">60% Complete</span>
+                      </div>
+                   </div>
+                </div>
+                <!-- Nav tabs -->
+                <div class="default-tab">
+                   <ul class="nav nav-tabs nav flex-column nav-pills mb-3" role="tablist">
+                      <li class="nav-item def_cus">
+                         <a class="nav-link  active" data-toggle="tab" href="#profile"><i class="la la-user mr-2"></i> Profile</a>
+                      </li>
+                      <li class="nav-item def_cus">
+                         <a class="nav-link" data-toggle="tab" href="#home"><i class="la la-home mr-2"></i> Education</a>
+                      </li>
+                      <li class="nav-item def_cus">
+                         <a class="nav-link" data-toggle="tab" href="#contact"><i class="flaticon-381-settings-2 mr-2"></i> Setting</a>
+                      </li>
+                      <!-- <li class="nav-item def_cus">
+                         <a class="nav-link" data-toggle="tab" href="#message"><i class="la la-envelope mr-2"></i> Message</a>
+                         </li> -->
+                   </ul>
+                   <div>URL: http://localhost:4200/#/login?code={{refferalCode}}</div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-xl-8">
+          <div class="tab-content">
+             <!-- prfoilesectionstart -->
+             <div class="tab-pane fade active show " id="profile">
+                <!--<div class="card">
+                   <div class="card-header">
+                   <div class="row">
+                       <div class="col-md-6">
+                           <div _ngcontent-qja-c84="" class="profile-photo">
+                               <img _ngcontent-qja-c84="" width="100" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500'" alt="" class="img-fluid rounded-circle circling" src="http://65.2.9.193/assets/images/images5414.png">
+                       
+                       </div>
+                       </div>
+                       <div class="col-md-6">
+                           <div>
+                               <span _ngcontent-ump-c84="" style="
+                               position: relative;
+                               top: 14px;
+                               left: 374px;
+                           "><h6  class="text-center" style="
+                   font-size: 17px;
+                   font-weight: 600;
+                   ">Badge Process</h6></span>
+                           </div>
+                       </div>
+                   
+                   </div>
+                      
+                   
+                   
+                   </div>
+                   
+                   <div class="card-body">
+                   
+                       <div class="row">
+                           <div class="col-md-6">
+                               <div class="row">
+                                   <div class="col-md-4">
+                                       <div class="silver-sec">
+                                           <h6>silver Class</h6>
+                                       </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                       <p>0/249</p>
+                                   </div>
+                                   <div class="col-md-4">
+                                       <img src="assets/images/silver-medal.png" class="img-fluid silvers">
+                                   </div>
+                   
+                               </div>
+                              
+                           </div>
+                   
+                           <div class="col-md-6">
+                              <div class="rect">
+                   
+                              </div>
+                           </div>
+                          
+                       </div>
+                   
+                       <div class="row">
+                           <div class="col-md-6">
+                               <ul _ngcontent-aol-c81="" class="frndses"><li _ngcontent-aol-c81="" class="frnds-1">Friendliness</li><li _ngcontent-aol-c81="" class="frnds-1">Explanation of the problem areas</li><li _ngcontent-aol-c81="" class="frnds-1">Session satisfaction</li></ul>
+                               <ul _ngcontent-lvd-c81="" class="frndses1"><li _ngcontent-lvd-c81="" class="frnds-1"> Value for money</li><li _ngcontent-lvd-c81="" class="frnds-1"> Useful suggestions</li></ul>
+                           </div>
+                   
+                       </div>
+                     
+                   
+                   </div>
+                   <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                       <div class="card-footer-link mb-4 mb-sm-0">
+                       </div>
+                       <a href="javascript:void()" class="btn btn-primary">Edit</a>
+                   </div>
+                   </div>-->
+                <div class="row">
+                   <div class="col-md-6">
+                      <div class="card">
+                         <div class="card-header border-0 pb-0">
+                            <div class="row">
+                               <div class="col-md-6">
+                                  <div _ngcontent-qja-c84="" class="profile-photo">
+                                     <img _ngcontent-qja-c84="" width="100" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500'" alt="" class="img-fluid rounded-circle circling" src="http://65.2.9.193/assets/images/images5414.png">
+                                  </div>
+                               </div>
+                               <div class="col-md-6">
+                                  <div>
+                                     <span _ngcontent-ump-c84="" style="
+                                        position: relative;
+                                        top: 14px;
+                                        left: 374px;
+                                        ">
+                                        <h6  class="text-center" style="
+                                           font-size: 17px;
+                                           font-weight: 600;
+                                           ">Badge Process</h6>
+                                     </span>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="card-body">
+                            <div class="row">
+                               <div class="col-md-12">
+                                  <div class="row">
+                                     <div class="col-md-4">
+                                        <div class="silver-sec">
+                                           <hr>
+                                           <h6>silver Class</h6>
+                                        </div>
+                                     </div>
+                                     <div class="col-md-4">
+                                        <p _ngcontent-mpu-c84="" style="margin-top: 26px;">0/249</p>
+                                     </div>
+                                     <div class="col-md-4">
+                                        <img src="assets/images/silver-medal.png" class="img-fluid silvers">
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="row">
+                               <div class="col-md-12">
+                                  <ul _ngcontent-aol-c81="" class="frndses">
+                                     <li _ngcontent-aol-c81="" class="frnds-1">Friendliness</li>
+                                     <li _ngcontent-aol-c81="" class="frnds-1">Explanation of the problem areas</li>
+                                     <li _ngcontent-aol-c81="" class="frnds-1">Session satisfaction</li>
+                                  </ul>
+                                  <ul _ngcontent-lvd-c81="" class="frndses1">
+                                     <li _ngcontent-lvd-c81="" class="frnds-1"> Value for money</li>
+                                     <li _ngcontent-lvd-c81="" class="frnds-1"> Useful suggestions</li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div  class="col-md-6" style="
+                      position: relative;
+                      left: -44px;
+                      ">
+                      <div class="card badges-card">
+                         <div class="card-header border-0 pb-0">
+                            <h5 class="card-title tiles2">Badge Progress</h5>
+                         </div>
+                         <div class="card-body">
+                            <div class="row">
+                               <div class="col-md-3">
+                                  <div class="badges-prog0">
+                                     <div class="rect">
+                                     </div>
+                                  </div>
+                                  <p>0</p>
+                                  <h6>Bronze</h6>
+                                  <hr>
+                               </div>
+                               <div class="col-md-3">
+                                  <p style="margin:0px 0px">25</p>
+                                  <div class="badges-prog1">
+                                     <div class="rect">
+                                     </div>
+                                  </div>
+                                  <h6>silver</h6>
+                               </div>
+                               <div class="col-md-3">
+                                  <p _ngcontent-yde-c84="" style="
+                                     margin: 0px 0px;
+                                     ">75</p>
+                                  <div class="badges-prog2">
+                                     <div class="rect">
+                                     </div>
+                                  </div>
+                                  <h6 _ngcontent-yde-c84="" style="
+                                     font-size: 12px;
+                                     ">Platinum</h6>
+                               </div>
+                               <div class="col-md-3">
+                                  <p>250</p>
+                                  <div class="badges-prog3">
+                                     <div class="rect">
+                                     </div>
+                                  </div>
+                                  <h6 style="
+                                     position: relative;
+                                     top: -17px;font-size: 12px;
+                                     ">Diamond</h6>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="card">
+                   <div class="card-header">
+                      <h5 class="card-title">Tags</h5>
+                   </div>
+                </div>
+                <div class="card">
+                   <div class="card-header">
+                      <h5 class="card-title">Profile Summary</h5>
+                   </div>
+                   <div class="card-body">
+                   </div>
+                   <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                      <div class="card-footer-link mb-4 mb-sm-0">
+                      </div>
+                   </div>
+                </div>
+                <div class="card">
+                   <div class="card-header">
+                      <h5 class="card-title">Contact Information</h5>
+                   </div>
+                   <div class="card-body">
+                      <div class="mb-3 row">
+                         <label for="inputPassword" class="col-sm-6 col-form-label">Phone Number</label>
+                         <div class="col-sm-6">
+                            <input type="password"  readonly class="form-control" id="">
+                         </div>
+                      </div>
+                      <div class="mb-3 row">
+                         <label for="inputPassword" class="col-sm-6 col-form-label">Email Address</label>
+                         <div class="col-sm-6">
+                            <input type="password"  readonly class="form-control" id="">
+                         </div>
+                      </div>
+                      <div class="mb-3 row">
+                         <label for="inputPassword" class="col-sm-6 col-form-label">City</label>
+                         <div class="col-sm-6">
+                            <input type="password"  readonly class="form-control" id="">
+                         </div>
+                      </div>
+                      <div class="mb-3 row">
+                         <label for="inputPassword" class="col-sm-6 col-form-label">State</label>
+                         <div class="col-sm-6">
+                            <input type="password"  readonly class="form-control" id="">
+                         </div>
+                      </div>
+                      <h5 class="personal">Personal Information</h5>
+                      <hr>
+                      <div class="mb-3 row">
+                         <label for="inputPassword" class="col-sm-6 col-form-label">DOB</label>
+                         <div class="col-sm-6">
+                            <input type="password"  readonly class="form-control" id="">
+                         </div>
+                      </div>
+                      <div class="mb-3 row">
+                         <label for="inputPassword" class="col-sm-6 col-form-label">Gender</label>
+                         <div class="col-sm-6">
+                            <input type="password"  readonly class="form-control" id="">
+                         </div>
+                      </div>
+                      <div class="mb-3 row">
+                         <label for="inputPassword" class="col-sm-6 col-form-label">Spoken Languages</label>
+                         <div class="col-sm-6">
+                            <input type="password"  readonly class="form-control" id="">
+                         </div>
+                      </div>
+                      <div class="mb-3 row">
+                         <label for="inputPassword" class="col-sm-6 col-form-label">Area of Expertise</label>
+                         <div class="col-sm-6">
+                            <input type="password"  readonly class="form-control" id="">
+                         </div>
+                      </div>
+                   </div>
+                   <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                      <div class="card-footer-link mb-4 mb-sm-0">
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <!-- profile section end -->
+             <!-- eductionsectionstart -->
+             <div class="tab-pane fade " id="home" role="tabpanel">
+                <div class="row">
+                   <div class="col-md-6">
+                      <div class="card">
+                         <div class="card-header border-0 pb-0">
+                            <div class="row">
+                               <div class="col-md-6">
+                                  <div _ngcontent-qja-c84="" class="profile-photo">
+                                     <img _ngcontent-qja-c84="" width="100" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500'" alt="" class="img-fluid rounded-circle circling" src="http://65.2.9.193/assets/images/images5414.png">
+                                  </div>
+                               </div>
+                               <div class="col-md-6">
+                                  <div>
+                                     <span _ngcontent-ump-c84="" style="
+                                        position: relative;
+                                        top: 14px;
+                                        left: 374px;
+                                        ">
+                                        <h6  class="text-center" style="
+                                           font-size: 17px;
+                                           font-weight: 600;
+                                           ">Badge Process</h6>
+                                     </span>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="card-body">
+                            <div class="row">
+                               <div class="col-md-12">
+                                  <div class="row">
+                                     <div class="col-md-4">
+                                        <div class="silver-sec">
+                                           <hr>
+                                           <h6>silver Class</h6>
+                                        </div>
+                                     </div>
+                                     <div class="col-md-4">
+                                        <p>0/249</p>
+                                     </div>
+                                     <div class="col-md-4">
+                                        <img src="assets/images/silver-medal.png" class="img-fluid silvers">
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="row">
+                               <div class="col-md-12">
+                                  <ul _ngcontent-aol-c81="" class="frndses">
+                                     <li _ngcontent-aol-c81="" class="frnds-1">Friendliness</li>
+                                     <li _ngcontent-aol-c81="" class="frnds-1">Explanation of the problem areas</li>
+                                     <li _ngcontent-aol-c81="" class="frnds-1">Session satisfaction</li>
+                                  </ul>
+                                  <ul _ngcontent-lvd-c81="" class="frndses1">
+                                     <li _ngcontent-lvd-c81="" class="frnds-1"> Value for money</li>
+                                     <li _ngcontent-lvd-c81="" class="frnds-1"> Useful suggestions</li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div  class="col-md-6" style="
+                      position: relative;
+                      left: -44px;
+                      ">
+                      <div class="card badges-card">
+                         <div class="card-header border-0 pb-0">
+                            <h5 class="card-title tiles2">Badge Progress</h5>
+                         </div>
+                         <div class="card-body">
+                            <div class="row">
+                               <div class="col-md-3">
+                                  <div class="badges-prog0">
+                                     <div class="rect">
+                                     </div>
+                                  </div>
+                                  <p>0</p>
+                                  <h6>Bronze</h6>
+                                  <hr>
+                               </div>
+                               <div class="col-md-3">
+                                  <p style="margin:0px 0px">25</p>
+                                  <div class="badges-prog1">
+                                     <div class="rect">
+                                     </div>
+                                  </div>
+                                  <h6>silver</h6>
+                               </div>
+                               <div class="col-md-3">
+                                  <p _ngcontent-yde-c84="" style="
+                                     margin: 0px 0px;
+                                     ">75</p>
+                                  <div class="badges-prog2">
+                                     <div class="rect">
+                                     </div>
+                                  </div>
+                                  <h6 _ngcontent-yde-c84="" style="
+                                     font-size: 12px;
+                                     ">Platinum</h6>
+                               </div>
+                               <div class="col-md-3">
+                                  <p>250</p>
+                                  <div class="badges-prog3">
+                                     <div class="rect">
+                                     </div>
+                                  </div>
+                                  <h6 style="
+                                     position: relative;
+                                     top: -17px;font-size: 12px;
+                                     ">Diamond</h6>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="card">
+                   <div class="card-header">
+                      <h5 class="card-title">Tags</h5>
+                   </div>
+                </div>
+                <div class="card">
+                   <div class="card-header">
+                      <h5 class="card-title">Documents</h5>
+                      <hr>
+                   </div>
+                   <div class="card-body">
+                      <div class="mb-3 row">
+                         <label for="staticEmail" class="col-sm-5 col-form-label">Resume</label>
+                         <div class="col-sm-7">
+                            <button class="btn btn-primary view">View</button>
+                            <button class="btn btn-primary views">Download</button>
+                         </div>
+                      </div>
+                      <div class="mb-3 row">
+                         <label for="inputPassword" class="col-sm-5 col-form-label">Latest Degree</label>
+                         <div class="col-sm-7">
+                            <button class="btn btn-primary view">View</button>
+                            <button class="btn btn-primary views">Download</button>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="card">
+                   <div class="card-header">
+                      <h5 class="card-title">Experience</h5>
+                      <hr>
+                   </div>
+                   <div class="card-body">
+                      <h5 class="headscoun">HTML</h5>
+                      <p>loreum ipsum</p>
+                      <p>loreum ipsum</p>
+                      <p>loreum ipsum</p>
+                      <hr>
+                      <h5 class="headscoun">Developer</h5>
+                      <p>lolreum</p>
+                      <p>loreum</p>
+                      <p>loreum</p>
+                   </div>
+                </div>
+                <div class="card">
+                   <div class="card-header">
+                      <h5 class="card-title">Education</h5>
+                      <hr>
+                   </div>
+                   <div class="card-body">
+                      <h5 class="headscoun">GVPS</h5>
+                      <p>BMS-Bachelor of Management Science</p>
+                      <p>Finance</p>
+                      <p>loreum ipsum</p>
+                      <hr>
+                      <h5 class="headscoun">SDPG</h5>
+                      <p>BEM-Bachelor of event Management</p>
+                      <p>loreum</p>
+                      <p>loreum</p>
+                   </div>
+                </div>
+             </div>
+             <div class="tab-pane fade" id="contact">
+                <div class="card">
+                   <div class="card-header">
+                      <h5 class="card-title">Bank Account Information</h5>
+                      <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                   </div>
+                   <div class="card-body" *ngIf="counsellor_data">
+                      <div class="profile-personal-info">
+                         <div class="row mb-2">
+                            <div class="col-sm-3 col-5">
+                               <h5 class="f-w-500">Account Number <span class="pull-right">:</span>
+                               </h5>
+                            </div>
+                            <div class="col-sm-9 col-7"><span>{{counsellor_data[0].bank_account}}</span>
+                            </div>
+                         </div>
+                         <div class="row mb-2">
+                            <div class="col-sm-3 col-5">
+                               <h5 class="f-w-500">IFSC Number <span class="pull-right">:</span>
+                               </h5>
+                            </div>
+                            <div class="col-sm-9 col-7"><span>{{counsellor_data[0].ifsc}}</span>
+                            </div>
+                         </div>
+                         <div class="row mb-2">
+                            <div class="col-sm-3 col-5">
+                               <h5 class="f-w-500">Account Holder Name<span class="pull-right">:</span></h5>
+                            </div>
+                            <div class="col-sm-9 col-7"><span>{{counsellor_data[0].account_holder_name}}</span>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                      <div class="card-footer-link mb-4 mb-sm-0">
+                      </div>
+                      <a href="javascript:void()" class="btn btn-primary">Edit</a>
+                   </div>
+                </div>
+             </div>
+             <div class="tab-pane fade" id="message">
+                <div class="pt-4">
+                   <h4>This is message title</h4>
+                   <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.
+                   </p>
+                   <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.
+                   </p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
